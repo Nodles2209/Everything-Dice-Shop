@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="english">
+<head>
+    <meta charset="UTF-8">
+    <title>Everything dice shop</title>
+</head>
+<body>
+    <h1>Everything-dice shop</h1>
+    <ul>
+        <li><a href="{{url_for('galleryPage')}}">Home</a></li>
+        {% for item_category in categories %}
+            <li><a href="{{ url_for('loadCategory', category=item_category) }}">{{ item_category }}</a></li>
+        {% endfor %}
+    </ul>
+    {% for home_category, item_list in home_display %}
+        <h2>{{ home_category }}</h2>
+        <ul>
+            {% for item in item_list %}
+                {% if item.in_stock %}
+                    <li><a href="{{ url_for('loadItem', item_id=item.id) }}">{{ item.name }}</a></li>
+                    <img src="{{ url_for('static', filename=item.img) }}">
+                    <li>{{ 'Price : ' ~ item.price[0] }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>

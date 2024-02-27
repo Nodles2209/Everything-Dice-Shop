@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ category_name }}</title>
+</head>
+<body>
+    <h1>Everything-dice shop</h1>
+    <ul>
+        <li><a href="{{url_for('galleryPage')}}">Home</a></li>
+        {% for item_category in categories %}
+            <li><a href="{{ url_for('loadCategory', category=item_category) }}">{{ item_category }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>{{ item.name }}</h2>
+    <img src="{{ url_for('static', filename=item.img) }}">
+    {% if item.in_stock %}
+        {% if item.options|length > 1 %}
+            {% for index in range(item.options|length) %}
+                <p>{{ 'Options : ' ~ item.options[index] }}</p>
+                <p>{{ 'Price : ' ~ item.price[index] }}</p>
+            {% endfor %}
+        {% else %}
+            <p>{{ 'Options : ' ~ item.options[0] }}</p>
+            <p>{{ 'Price : ' ~ item.price[0] }}</p>
+        {% endif %}
+        <p>Add to basket</p>
+    {% else %}
+        <p>Out of stock</p>
+    {% endif %}
+</body>
+</html>
