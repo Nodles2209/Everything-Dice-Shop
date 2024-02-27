@@ -1,0 +1,651 @@
+{
+    "Resin dice sets":
+    [
+        {
+            "id": 100000,
+            "name": "Galaxy dice set",
+            "img": "img/resin_dice/galaxy.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100001,
+            "name": "Black and gold (leaf) dice set",
+            "img": "img/resin_dice/black_gold_leaf.png",
+            "options": ["7 dice set"],
+            "price": [60],
+            "stock": [10],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100002,
+            "name": "Hollow purple liquid core set",
+            "img": "img/resin_dice/hollow_purple_liquid_core_set.png",
+            "options": ["7 dice set"],
+            "price": [60],
+            "stock": [10],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100003,
+            "name": "Flame dice set",
+            "img": "img/resin_dice/flame.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100004,
+            "name": "Blood red liquid core D20 chonk dice",
+            "img": "img/resin_dice/blood_liquid_core_chonk.png",
+            "options": ["Single D20 chonk"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100005,
+            "name": "Celestial shower (dark) dice set",
+            "img": "img/resin_dice/celestial_dark.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100006,
+            "name": "Celestial shower (light) dice set",
+            "img": "img/resin_dice/celestial_light.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100007,
+            "name": "Sacred sakura dice set",
+            "img": "img/resin_dice/sakura.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100008,
+            "name": "Space Koi liquid core D20 dice",
+            "img": "img/resin_dice/space_koi_d20.png",
+            "options": ["Single D20"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100009,
+            "name": "Petri style water dice set",
+            "img": "img/resin_dice/aqua_petri.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100010,
+            "name": "Eternal sunset dice set",
+            "img": "img/resin_dice/eternal_sunset.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100011,
+            "name": "Blue eyes white dragon dice set",
+            "img": "img/resin_dice/blue_eyes.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100012,
+            "name": "Gojo red/blue liquid core dice set",
+            "img": "img/resin_dice/red_blue_liquid_core_set.png",
+            "options": ["Single D20 chonk"],
+            "price": [50],
+            "stock": [50],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100013,
+            "name": "Valentine's day D20 chonk dice",
+            "img": "img/resin_dice/valentines_chonk.png",
+            "options": ["Single D20 chonk"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100014,
+            "name": "Night koi liquid core dice set",
+            "img": "img/resin_dice/night_koi_set.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100015,
+            "name": "Dried rose dice set",
+            "img": "img/resin_dice/rose.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100016,
+            "name": "Lord of the rings dice set",
+            "img": "img/resin_dice/sauron_ring.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100017,
+            "name": "Cherry blossom dice set",
+            "img": "img/resin_dice/pink_flower.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100018,
+            "name": "Botanical dice set",
+            "img": "img/resin_dice/botania.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100019,
+            "name": "Bloom liquid core dice set",
+            "img": "img/resin_dice/bloom_liquid_core.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 100020,
+            "name": "Transparent blue d100 dice",
+            "img": "img/resin_dice/transparent_blue_d100.png",
+            "options": ["Single d100"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        }
+    ],
+
+    "Metal dice sets":
+    [
+        {
+            "id": 200000,
+            "name": "Steampunk red copper dice set",
+            "img": "img/metal_dice/steampunk_red_copper.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 200001,
+            "name": "Royalty set - Gold and red dice set",
+            "img": "img/metal_dice/royalty_gold.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 200002,
+            "name": "925 Sterling silver D20 dice",
+            "img": "img/metal_dice/sterling_silver_d20.png",
+            "options": ["Single D20"],
+            "price": [10],
+            "stock": [10],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 200003,
+            "name": "Bronze dice set",
+            "img": "img/metal_dice/bronze.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 200004,
+            "name": "Copper dice set with leaves design",
+            "img": "img/metal_dice/copper_leaves.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 200005,
+            "name": "Tamarand, 24k gold plated dice set",
+            "img": "img/metal_dice/24kgold.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 200006,
+            "name": "Sage’s Rift Stones – Black/Aquamarine Metal Polyhedral Dice Set",
+            "img": "img/metal_dice/black_aquamarine_metal.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 200007,
+            "name": "Metal dice set with blue accents",
+            "img": "img/metal_dice/metal_blue.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 200008,
+            "name": "Metal dragon dice set",
+            "img": "img/metal_dice/black_hollow_dragon_metal.png",
+            "options": ["7 dice set"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        }
+    ],
+
+    "Dice making materials":
+    [
+        {
+            "id": 800000,
+            "name": "7 dice resin slab mold",
+            "img": "img/dice_making/7_dice_slab_mold.png",
+            "options": ["Single 7 dice mold"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 800001,
+            "name": "D20 chonk dice resin slab mold",
+            "img": "img/dice_making/d20_chonk_mold.png",
+            "options": ["Single d20 chonk dice mold"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 800002,
+            "name": "1.46kg epoxy resin+hardener set",
+            "img": "img/dice_making/1_45kg_epoxy_hardener_resin.png",
+            "options": ["1.45kg bottle(s)"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 800003,
+            "name": "1kg UV resin",
+            "img": "img/dice_making/1kg_uv_resin.png",
+            "options": ["1kg bottle"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 800004,
+            "name": "26 colour alcohol ink",
+            "img": "img/dice_making/26_color_alcohol_ink.png",
+            "options": ["Single d20 chonk dice mold"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 800005,
+            "name": "16 colour resin pigment",
+            "img": "img/dice_making/16_color_resin_pigment.png",
+            "options": ["Single d20 chonk dice mold"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 800006,
+            "name": "24 colour mica powder",
+            "img": "img/dice_making/24_color_mica_powder.png",
+            "options": ["Single d20 chonk dice mold"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        }
+    ],
+
+    "Dice accessories":
+    [
+        {
+            "id": 900000,
+            "name": "14k gold D6 earrings",
+            "img": "img/dice_accessories/14k_gold_d6_earrings.png",
+            "options": ["Single pair of earrings"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900001,
+            "name": "Dusky rose D10+percentile mismatched earrings",
+            "img": "img/dice_accessories/dusky_rose_d10_dpercentile_mismatched_earrings.png",
+            "options": ["Single pair of earrings"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900002,
+            "name": "Rose D4 earrings",
+            "img": "img/dice_accessories/rose_d4_earrings.png",
+            "options": ["Single pair of earrings"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900003,
+            "name": "Sublime deep sea D4 crystal earrings",
+            "img": "img/dice_accessories/sublime_d4_crystal_earrings.png",
+            "options": ["Single pair of earrings"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900004,
+            "name": "Amethyst dice set earrings",
+            "img": "img/dice_accessories/amethyst_dice_set_earrings.png",
+            "options": ["Single pair of earrings"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900005,
+            "name": "925 Sterling silver D6 earrings+necklace pair",
+            "img": "img/dice_accessories/925_sterling_silver_earrings_necklace.png",
+            "options": ["Set of earrings and necklace"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900006,
+            "name": "14k gold double D4 necklace",
+            "img": "img/dice_accessories/14k_gold_double_necklace.png",
+            "options": ["Necklace pendant and chain"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900007,
+            "name": "D20 resin dice metal cage necklace",
+            "img": "img/dice_accessories/d20_dice_cage_necklace.png",
+            "options": ["Necklace pendant and chain"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900008,
+            "name": "Dragon guardian D20 necklace",
+            "img": "img/dice_accessories/dragon_d20_necklace.png",
+            "options": ["Necklace pendant and chain"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900009,
+            "name": "Galaxy D20 resin dice necklace",
+            "img": "img/dice_accessories/galaxy_d20_necklace.png",
+            "options": ["Necklace pendant and chain"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900010,
+            "name": "Silver D6+charm necklace",
+            "img": "img/dice_accessories/silver_d6_charm_necklace.png",
+            "options": ["Necklace pendant and chain"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900011,
+            "name": "Twin D6 silver necklace",
+            "img": "img/dice_accessories/twin_d6_necklace.png",
+            "options": ["Necklace pendant and chain"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900012,
+            "name": "18k gold D20 ring",
+            "img": "img/dice_accessories/18k_gold_d20_ring.png",
+            "options": ["Single ring"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900013,
+            "name": "Duo D6 brass ring",
+            "img": "img/dice_accessories/duo_d6_brass_ring.png",
+            "options": ["Single ring"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900014,
+            "name": "Triple D6 silver ring",
+            "img": "img/dice_accessories/triple_d6_silver_ring.png",
+            "options": ["Single ring"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900015,
+            "name": "Dragon dice box ring",
+            "img": "img/dice_accessories/dragon_ring_box.png",
+            "options": ["Single ring"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900016,
+            "name": "Dice vault tray+box",
+            "img": "img/dice_accessories/dice_vault_tray_box.png",
+            "options": ["Dragon pattern box"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900017,
+            "name": "7 set storage dice box",
+            "img": "img/dice_accessories/7_set_box.png",
+            "options": ["Single wood box"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900018,
+            "name": "DnD book box+tray",
+            "img": "img/dice_accessories/book_box_tray.png",
+            "options": ["Single book tray"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900019,
+            "name": "Wood dice box single set storage",
+            "img": "img/dice_accessories/wood_dice_box.png",
+            "options": ["Single wood box"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        },
+
+        {
+            "id": 900020,
+            "name": "Resin dice box single set storage",
+            "img": "img/dice_accessories/resin_dice_box.png",
+            "options": ["Single resin box"],
+            "price": [30],
+            "stock": [30],
+            "sold": 0,
+            "in_stock": [true]
+        }
+    ]
+}
