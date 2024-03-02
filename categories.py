@@ -16,10 +16,3 @@ home_display = {
     'New in stock': new_stock,
     'All items': all_items,
 }
-
-"""
-for key, value in home_display.items():
-    print(key)
-    for item in value:
-        print(item)
-"""

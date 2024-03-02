@@ -22,7 +22,7 @@ def loadItem(item_id):
         for item in item_list:
             if item['id'] == item_id:
                 return render_template('singleItem.html', item=item, categories=all_categories)
-    pass  # Error handling here
+            # Include error handling
 
 
 if __name__ == '__main__':
