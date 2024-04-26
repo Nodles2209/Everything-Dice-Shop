@@ -1,6 +1,5 @@
 from flask import (Flask, render_template, redirect, url_for,
                    json, request)
-from categories import item_json, home_display, all_categories
 from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
