@@ -1,5 +1,5 @@
 import instance.db.createDB as createDB
-from src.app.create_app import parent
+from src.app.create_app import cur_path, parent
 import os
 from flask import json
 import datetime
@@ -13,8 +13,8 @@ def createAppDB():
 
 def initAppDB():
     with createDB.app.app_context():
-        items_file = os.path.join(parent, 'static', 'json', 'all_items.json')
-        lookup_file = os.path.join(parent, 'static', 'json', 'reference_tables.json')
+        items_file = os.path.join(cur_path, 'static', 'json', 'all_items.json')
+        lookup_file = os.path.join(cur_path, 'static', 'json', 'reference_tables.json')
 
         item_data = json.load(open(items_file, encoding='utf-8'))
         lookup_data = json.load(open(lookup_file, encoding='utf-8'))
@@ -41,7 +41,9 @@ def initAppDB():
                                                   listing_description=item["listing_description"],
                                                   avg_price=item["avg_price"],
                                                   avg_rating=item["avg_rating"],
-                                                  num_of_reviews=item["num_of_reviews"], footprint=item["footprint"])
+                                                  num_of_reviews=item["num_of_reviews"],
+                                                  footprint=item["footprint"],
+                                                  sold=item["sold"])
 
                 creating_table_for = item["options"]
                 for index in range(len(creating_table_for["option_id"])):

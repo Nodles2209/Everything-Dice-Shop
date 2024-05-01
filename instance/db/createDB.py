@@ -38,6 +38,7 @@ class ItemListing(db.Model):
     avg_price = db.Column(db.Float, index=True)
     avg_rating = db.Column(db.Float, index=True)
     num_of_reviews = db.Column(db.Integer, index=True)
+    sold = db.Column(db.Integer, index=True)
 
 
 class ListingOptions(db.Model):
