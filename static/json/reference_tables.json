@@ -1,0 +1,116 @@
+{
+  "Item classifications": [
+    {
+      "classification_id": 1,
+      "id_identifier": 1,
+      "category_name": "resin_dice"
+    },
+    {
+      "classification_id": 2,
+      "id_identifier": 2,
+      "category_name": "metal_dice"
+    },
+    {
+      "classification_id": 3,
+      "id_identifier": 8,
+      "category_name": "dice_making_materials"
+    },
+    {
+      "classification_id": 4,
+      "id_identifier": 9,
+      "category_name": "dice_accessories"
+    }
+  ],
+  "Country list": [
+    {
+      "country_id": 1,
+      "country_name": "United Kingdom"
+    },
+    {
+      "country_id": 2,
+      "country_name": "Ireland"
+    },
+    {
+      "country_id": 3,
+      "country_name": "Germany"
+    },
+    {
+      "country_id": 4,
+      "country_name": "Luxembourg"
+    },
+    {
+      "country_id": 5,
+      "country_name": "France"
+    },
+    {
+      "country_id": 6,
+      "country_name": "Norway"
+    },
+    {
+      "country_id": 7,
+      "country_name": "Spain"
+    },
+    {
+      "country_id": 8,
+      "country_name": "Denmark"
+    },
+    {
+      "country_id": 9,
+      "country_name": "Netherlands"
+    },
+    {
+      "country_id": 10,
+      "country_name": "Italy"
+    },
+    {
+      "country_id": 11,
+      "country_name": "Switzerland"
+    },
+    {
+      "country_id": 12,
+      "country_name": "Sweden"
+    },
+    {
+      "country_id": 13,
+      "country_name": "Poland"
+    },
+    {
+      "country_id": 14,
+      "country_name": "Czechia"
+    },
+    {
+      "country_id": 15,
+      "country_name": "Austria"
+    },
+    {
+      "country_id": 16,
+      "country_name": "Belgium"
+    },
+    {
+      "country_id": 17,
+      "country_name": "Portugal"
+    }
+  ],
+  "Card classification": [
+    {
+      "classification_id": 1,
+      "card_identifier": 4,
+      "card_type": "visa"
+    },
+    {
+      "classification_id": 2,
+      "card_identifier": 2,
+      "card_type": "mastercard"
+    },
+    {
+      "classification_id": 3,
+      "card_identifier": 5,
+      "card_type": "mastercard"
+    },
+    {
+      "classification_id": 4,
+      "card_identifier": 3,
+      "card_type": "american express"
+    }
+  ]
+}
