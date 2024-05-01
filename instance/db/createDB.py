@@ -9,7 +9,7 @@ class ItemClassification(db.Model):
 
     classification_id = db.Column(db.Integer, primary_key=True)
 
-    id_identifier = db.Column(db.Integer, foreign_key="item_listing.id_identifier")
+    id_identifier = db.Column(db.Integer, db.ForeignKey("item_listing.id_identifier"))
     identifier = db.relationship("ItemListing", back_populates="classification")
 
     category_name = db.Column(db.String, index=True)
@@ -29,10 +29,10 @@ class ItemListing(db.Model):
     thumbnail_img = db.Column(db.String, index=True)
     listing_name = db.Column(db.String, index=True)
     listing_description = db.Column(db.Text, index=True)
-    carbon_footprint = db.Column(db.Real, index=True)
-    avg_price = db.Column(db.Real, index=True)
-    avg_rating = db.Column(db.Real, index=True)
-    num_of_reviews = db.Column(db.Int, index=True)
+    footprint = db.Column(db.Float, index=True)
+    avg_price = db.Column(db.Float, index=True)
+    avg_rating = db.Column(db.Float, index=True)
+    num_of_reviews = db.Column(db.Integer, index=True)
 
 
 class ListingOptions(db.Model):
@@ -41,12 +41,12 @@ class ListingOptions(db.Model):
     option_id = db.Column(db.Integer, primary_key=True)
     basket = db.relationship("UserBasket", back_populates="option")
 
-    for_listing_id = db.Column(db.Integer, foreign_key="item_listing.listing_id")
+    for_listing_id = db.Column(db.Integer, db.ForeignKey("item_listing.listing_id"))
     listing = db.relationship("ItemListing", back_populates="options")
 
     option_img = db.Column(db.String, index=True)
     option_name = db.Column(db.String, index=True)
-    option_price = db.Column(db.Real, index=True)
+    option_price = db.Column(db.Float, index=True)
     options_stock = db.Column(db.Integer, index=True)
     option_sold = db.Column(db.Integer, index=True)
     option_inStock = db.Column(db.Boolean, index=True)
@@ -58,15 +58,15 @@ class ListingReviews(db.Model):
     review_id = db.Column(db.Integer, primary_key=True)
     reply = db.relationship("ReviewReplies", back_populates="review")
 
-    listing_id = db.Column(db.Integer, foreign_key="item_listing.listing_id")
+    listing_id = db.Column(db.Integer, db.ForeignKey("item_listing.listing_id"))
     listing = db.relationship("ItemListing", back_populates="reviews")
 
-    review_user_id = db.Column(db.Integer, foreign_key="user_profile.user_id")
+    review_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
     user = db.relationship("UserProfile", back_populates="review")
 
     review_title = db.Column(db.String, index=True)
     review_text = db.Column(db.Text, index=True)
-    review_rating = db.Column(db.Real, index=True)
+    review_rating = db.Column(db.Float, index=True)
     num_of_replies = db.Column(db.Integer, index=True)
 
 
@@ -75,13 +75,12 @@ class ReviewReplies(db.Model):
 
     reply_id = db.Column(db.Integer, primary_key=True)
 
-    reply_user_id = db.Column(db.Integer, foreign_key="user_profile.user_id")
+    reply_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
     user = db.relationship("UserProfile", back_populates="reply")
 
-    under_review_id = db.Column(db.Integer, foreign_key="listing_reviews.review_id")
+    under_review_id = db.Column(db.Integer, db.ForeignKey("listing_reviews.review_id"))
     review = db.relationship("ListingReviews", back_populates="reply")
 
-    reply_title = db.Column(db.String, index=True)
     reply_text = db.Column(db.Text, index=True)
 
 
@@ -104,10 +103,10 @@ class UserBasket(db.Model):
 
     basket_id = db.Column(db.Integer, primary_key=True)
 
-    basket_user_id = db.Column(db.Integer, foreign_key="user_profile.user_id")
+    basket_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
     user = db.relationship("UserProfile", back_populates="basket")
 
-    item_id = db.Column(db.Integer, foreign_key="listing_options.option_id")
+    item_id = db.Column(db.Integer, db.ForeignKey("listing_options.option_id"))
     option = db.relationship("ListingOptions", back_populates="basket")
 
     num_of_items = db.Column(db.Integer, index=True)
@@ -133,28 +132,34 @@ class BillingInfo(db.Model):
     city = db.Column(db.String, index=True)
     postcode = db.Column(db.String, index=True)
 
-    country_id = db.Column(db.Integer, foreign_key="country_list.country_id")
+    country_id = db.Column(db.Integer, db.ForeignKey("country_list.country_id"))
     country = db.relationship("CountryList", back_populates="billing")
 
     state = db.Column(db.String, index=True)
     phone_area_code = db.Column(db.Integer, index=True)
     phone_num = db.Column(db.Integer, index=True)
 
-    payment_method = db.Column(db.Integer, foreign_key="payment_method.details_id")
+    payment_method = db.Column(db.Integer, db.ForeignKey("payment_method.details_id"))
     details = db.relationship("PaymentMethod", back_populates="billing")
+    billing_type = db.Column(db.String, index=True)
+
+    __mapper_args__ = {"polymorphic_identity": "billing_info",
+                       "polymorphic_on": 'billing_type'}
 
 
 class ListingBillingInfo(BillingInfo):
     __tablename__ = "listing_billing_info"
+    __mapper_args__ = {"polymorphic_identity": "listing_billing_info"}
 
-    listing_id = db.Column(db.Integer, foreign_key="item_listing.listing_id")
+    listing_id = db.Column(db.Integer, db.ForeignKey("item_listing.listing_id"))
     listing = db.relationship("ItemListing", back_populates="billing")
 
 
 class UserbillingInfo(BillingInfo):
     __tablename__ = "user_billing_info"
+    __mapper_args__ = {"polymorphic_identity": "user_billing_info"}
 
-    user_id = db.Column(db.Integer, foreign_key="user_profile.user_id")
+    user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
     user = db.relationship("UserProfile", back_populates="billing")
 
 
@@ -164,24 +169,17 @@ class PaymentMethod(db.Model):
     details_id = db.Column(db.Integer, primary_key=True)
     billing = db.relationship("BillingInfo", back_populates="details")
 
-    transaction_type = db.Column(db.String, index=True)
-
-
-class CardClassification(db.Model):
-    __tablename__ = "card_classification"
-
-    classification_id = db.Column(db.Integer, primary_key=True)
-
-    card_identifier = db.Column(db.Integer, foreign_key="credit_card_details.card_identifier")
-    identifier = db.relationship("CreditCardDetails", back_populates="classification")
-
-    card_type = db.Column(db.String, index=True)
+    payment_type = db.Column(db.String, index=True)
+    __mapper_args__ = {"polymorphic_identity": "payment_method",
+                       "polymorphic_on": 'payment_type'}
 
 
 class CreditCardDetails(PaymentMethod):
     __tablename__ = "credit_card_details"
+    __mapper_args__ = {"polymorphic_identity": "credit_card_details"}
+    __schema__ = "credit_card_details"
 
-    card_identifier = db.Column(db.Integer, foreign_key="card_classification.card_identifier")
+    card_identifier = db.Column(db.Integer, db.ForeignKey("card_classification.card_identifier"))
     classification = db.relationship("CardClassification", back_populates="identifier")
 
     card_num = db.Column(db.Integer, index=True)
@@ -190,8 +188,21 @@ class CreditCardDetails(PaymentMethod):
     cardholder = db.Column(db.String, index=True)
 
 
+class CardClassification(db.Model):
+    __tablename__ = "card_classification"
+
+    classification_id = db.Column(db.Integer, primary_key=True)
+
+    card_identifier = db.Column(db.Integer, db.ForeignKey(CreditCardDetails.card_identifier))
+    identifier = db.relationship("CreditCardDetails", back_populates="classification")
+
+    card_type = db.Column(db.String, index=True)
+
+
 class OnlineBanking(PaymentMethod):
     __tablename__ = "online_banking"
+    __mapper_args__ = {"polymorphic_identity": "online_banking"}
+    __schema__ = "online_banking"
 
     merchant_name = db.Column(db.String, index=True)
     username = db.Column(db.String, index=True)
