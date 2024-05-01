@@ -1,3 +1,4 @@
 /config
 /venv
 /.idea
+/instance/app.db
