@@ -7,13 +7,12 @@ import datetime
 with createDB.app.app_context():
     createDB.db.create_all()
 
-items_file = os.path.join(parent, 'static', 'json', 'all_items.json')
-lookup_file = os.path.join(parent, 'static', 'json', 'reference_tables.json')
+    items_file = os.path.join(parent, 'static', 'json', 'all_items.json')
+    lookup_file = os.path.join(parent, 'static', 'json', 'reference_tables.json')
 
-item_data = json.load(open(items_file, encoding='utf-8'))
-lookup_data = json.load(open(lookup_file, encoding='utf-8'))
+    item_data = json.load(open(items_file, encoding='utf-8'))
+    lookup_data = json.load(open(lookup_file, encoding='utf-8'))
 
-with createDB.app.app_context():
     for classification in lookup_data["Item classifications"]:
         newCategory = createDB.ItemClassification(id_identifier=classification["id_identifier"],
                                                   category_name=classification["category_name"])
