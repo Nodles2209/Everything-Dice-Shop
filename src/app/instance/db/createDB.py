@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from src.app.shop import app
+from src.app.create_app import app
 
 db = SQLAlchemy(app)
 
@@ -10,7 +10,8 @@ class ItemClassification(db.Model):
     classification_id = db.Column(db.Integer, primary_key=True)
 
     id_identifier = db.Column(db.Integer, db.ForeignKey("item_listing.id_identifier"))
-    identifier = db.relationship("ItemListing", back_populates="classification")
+    identifier = db.relationship("ItemListing", back_populates="classification",
+                                 primaryjoin="ItemClassification.id_identifier == ItemListing.id_identifier")
 
     category_name = db.Column(db.String, index=True)
 
@@ -19,12 +20,16 @@ class ItemListing(db.Model):
     __tablename__ = "item_listing"
 
     listing_id = db.Column(db.Integer, primary_key=True)
-    options = db.relationship("ListingOptions", back_populates="listing")
-    reviews = db.relationship("ListingReviews", back_populates="listing")
-    billing = db.relationship("ListingBillingInfo", back_populates="listing")
+    options = db.relationship("ListingOptions", back_populates="listing",
+                              primaryjoin="ItemListing.listing_id == ListingOptions.for_listing_id")
+    reviews = db.relationship("ListingReviews", back_populates="listing",
+                              primaryjoin="ItemListing.listing_id == ListingReviews.listing_id")
+    billing = db.relationship("ListingBillingInfo", back_populates="listing",
+                              primaryjoin="ItemListing.listing_id == ListingBillingInfo.listing_id")
 
     id_identifier = db.Column(db.Integer, index=True)
-    classification = db.relationship("ItemClassification", back_populates="identifier")
+    classification = db.relationship("ItemClassification", back_populates="identifier",
+                                     primaryjoin="ItemListing.id_identifier == ItemClassification.id_identifier")
 
     thumbnail_img = db.Column(db.String, index=True)
     listing_name = db.Column(db.String, index=True)
@@ -39,10 +44,12 @@ class ListingOptions(db.Model):
     __tablename__ = "listing_options"
 
     option_id = db.Column(db.Integer, primary_key=True)
-    basket = db.relationship("UserBasket", back_populates="option")
+    basket = db.relationship("BasketItem", back_populates="option",
+                             primaryjoin="ListingOptions.option_id == BasketItem.for_item_id")
 
     for_listing_id = db.Column(db.Integer, db.ForeignKey("item_listing.listing_id"))
-    listing = db.relationship("ItemListing", back_populates="options")
+    listing = db.relationship("ItemListing", back_populates="options",
+                              primaryjoin="ListingOptions.for_listing_id == ItemListing.listing_id")
 
     option_img = db.Column(db.String, index=True)
     option_name = db.Column(db.String, index=True)
@@ -56,13 +63,16 @@ class ListingReviews(db.Model):
     __tablename__ = "listing_reviews"
 
     review_id = db.Column(db.Integer, primary_key=True)
-    reply = db.relationship("ReviewReplies", back_populates="review")
+    reply = db.relationship("ReviewReplies", back_populates="review",
+                            primaryjoin="ListingReviews.review_id == ReviewReplies.under_review_id")
 
     listing_id = db.Column(db.Integer, db.ForeignKey("item_listing.listing_id"))
-    listing = db.relationship("ItemListing", back_populates="reviews")
+    listing = db.relationship("ItemListing", back_populates="reviews",
+                              primaryjoin="ListingReviews.listing_id == ItemListing.listing_id")
 
     review_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
-    user = db.relationship("UserProfile", back_populates="review")
+    user = db.relationship("UserProfile", back_populates="review",
+                           primaryjoin="ListingReviews.review_user_id == UserProfile.user_id")
 
     review_title = db.Column(db.String, index=True)
     review_text = db.Column(db.Text, index=True)
@@ -76,10 +86,12 @@ class ReviewReplies(db.Model):
     reply_id = db.Column(db.Integer, primary_key=True)
 
     reply_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
-    user = db.relationship("UserProfile", back_populates="reply")
+    user = db.relationship("UserProfile", back_populates="reply",
+                           primaryjoin="ReviewReplies.reply_user_id == UserProfile.user_id")
 
     under_review_id = db.Column(db.Integer, db.ForeignKey("listing_reviews.review_id"))
-    review = db.relationship("ListingReviews", back_populates="reply")
+    review = db.relationship("ListingReviews", back_populates="reply",
+                             primaryjoin="ReviewReplies.under_review_id == ListingReviews.review_id")
 
     reply_text = db.Column(db.Text, index=True)
 
@@ -88,10 +100,14 @@ class UserProfile(db.Model):
     __tablename__ = "user_profile"
 
     user_id = db.Column(db.Integer, primary_key=True)
-    review = db.relationship("ListingReviews", back_populates="user")
-    reply = db.relationship("ReviewReplies", back_populates="user")
-    basket = db.relationship("UserBasket", back_populates="user")
-    billing = db.relationship("UserBillingInfo", back_populates="user")
+    review = db.relationship("ListingReviews", back_populates="user",
+                             primaryjoin="UserProfile.user_id == ListingReviews.review_user_id")
+    reply = db.relationship("ReviewReplies", back_populates="user",
+                            primaryjoin="UserProfile.user_id == ReviewReplies.reply_user_id")
+    basket = db.relationship("UserBasket", back_populates="user",
+                             primaryjoin="UserProfile.user_id == UserBasket.basket_user_id")
+    billing = db.relationship("UserBillingInfo", back_populates="user",
+                              primaryjoin="UserProfile.user_id == UserBillingInfo.user_id")
 
     username = db.Column(db.String, index=True)
     password = db.Column(db.String, index=True)
@@ -102,12 +118,28 @@ class UserBasket(db.Model):
     __tablename__ = "user_basket"
 
     basket_id = db.Column(db.Integer, primary_key=True)
+    basket_item = db.relationship("BasketItem", back_populates="basket",
+                                  primaryjoin="UserBasket.basket_id == BasketItem.for_basket_id")
 
     basket_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
-    user = db.relationship("UserProfile", back_populates="basket")
+    user = db.relationship("UserProfile", back_populates="basket",
+                           primaryjoin="UserBasket.basket_user_id == UserProfile.user_id")
 
-    item_id = db.Column(db.Integer, db.ForeignKey("listing_options.option_id"))
-    option = db.relationship("ListingOptions", back_populates="basket")
+    session_id = db.Column(db.String, index=True)
+
+
+class BasketItem(db.Model):
+    __tablename__ = "basket_item"
+
+    basket_item_num = db.Column(db.Integer, primary_key=True)
+
+    for_basket_id = db.Column(db.Integer, db.ForeignKey("user_basket.basket_id"))
+    basket = db.relationship("UserBasket", back_populates="basket_item",
+                             primaryjoin="BasketItem.for_basket_id == UserBasket.basket_id")
+
+    for_item_id = db.Column(db.Integer, db.ForeignKey("listing_options.option_id"))
+    option = db.relationship("ListingOptions", back_populates="basket",
+                             primaryjoin="BasketItem.for_item_id == ListingOptions.option_id")
 
     num_of_items = db.Column(db.Integer, index=True)
 
@@ -116,7 +148,8 @@ class CountryList(db.Model):
     __tablename__ = "country_list"
 
     country_id = db.Column(db.Integer, primary_key=True)
-    billing = db.relationship("BillingInfo", back_populates="country")
+    billing = db.relationship("BillingInfo", back_populates="country",
+                              primaryjoin="CountryList.country_id == BillingInfo.country_id")
 
     country_name = db.Column(db.String, index=True)
 
@@ -133,7 +166,8 @@ class BillingInfo(db.Model):
     postcode = db.Column(db.String, index=True)
 
     country_id = db.Column(db.Integer, db.ForeignKey("country_list.country_id"))
-    country = db.relationship("CountryList", back_populates="billing")
+    country = db.relationship("CountryList", back_populates="billing",
+                              primaryjoin="BillingInfo.country_id == CountryList.country_id")
 
     state = db.Column(db.String, index=True)
     phone_area_code = db.Column(db.Integer, index=True)
@@ -154,7 +188,8 @@ class ListingBillingInfo(BillingInfo):
                               primaryjoin="ListingBillingInfo.payment_method == PaymentMethod.details_id")
 
     listing_id = db.Column(db.Integer, db.ForeignKey("item_listing.listing_id"))
-    listing = db.relationship("ItemListing", back_populates="billing")
+    listing = db.relationship("ItemListing", back_populates="billing",
+                              primaryjoin="ListingBillingInfo.listing_id == ItemListing.listing_id")
 
 
 class UserBillingInfo(BillingInfo):
@@ -165,15 +200,18 @@ class UserBillingInfo(BillingInfo):
                               primaryjoin="UserBillingInfo.payment_method == PaymentMethod.details_id")
 
     user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
-    user = db.relationship("UserProfile", back_populates="billing")
+    user = db.relationship("UserProfile", back_populates="billing",
+                           primaryjoin="UserBillingInfo.user_id == UserProfile.user_id")
 
 
 class PaymentMethod(db.Model):
     __tablename__ = "payment_method"
 
     details_id = db.Column(db.Integer, primary_key=True)
-    listing_billing = db.relationship("ListingBillingInfo", back_populates="details")
-    user_billing = db.relationship("UserBillingInfo", back_populates="details")
+    listing_billing = db.relationship("ListingBillingInfo", back_populates="details",
+                                      primaryjoin="PaymentMethod.details_id == ListingBillingInfo.payment_method")
+    user_billing = db.relationship("UserBillingInfo", back_populates="details",
+                                   primaryjoin="PaymentMethod.details_id == UserBillingInfo.payment_method")
 
     payment_type = db.Column(db.String, index=True)
     __mapper_args__ = {"polymorphic_identity": "payment_method",
