@@ -11,7 +11,7 @@
         "option_img":["img/resin_dice/galaxy.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -65,7 +65,7 @@
         "option_img":["img/resin_dice/black_gold_leaf.png"],
         "option_price":[60],
         "option_stock":[10],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":60,
@@ -119,7 +119,7 @@
         "option_img":["img/resin_dice/hollow_purple_liquid_core_set.png"],
         "option_price":[60],
         "option_stock":[10],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":60,
@@ -173,7 +173,7 @@
         "option_img":["img/resin_dice/flame.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -227,7 +227,7 @@
         "option_img":["img/resin_dice/blood_liquid_core_chonk.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -281,7 +281,7 @@
         "option_img":["img/resin_dice/celestial_dark.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -335,7 +335,7 @@
         "option_img":["img/resin_dice/celestial_light.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -389,7 +389,7 @@
         "option_img":["img/resin_dice/sakura.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -443,7 +443,7 @@
         "option_img":["img/resin_dice/space_koi_d20.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -497,7 +497,7 @@
         "option_img":["img/resin_dice/aqua_petri.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -551,7 +551,7 @@
         "option_img":["img/resin_dice/eternal_sunset.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -605,7 +605,7 @@
         "option_img":["img/resin_dice/blue_eyes.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -659,7 +659,7 @@
         "option_img":["img/resin_dice/red_blue_liquid_core_set.png"],
         "option_price":[50],
         "option_stock":[50],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":50,
@@ -713,7 +713,7 @@
         "option_img":["img/resin_dice/valentines_chonk.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -767,7 +767,7 @@
         "option_img":["img/resin_dice/night_koi_set.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -821,7 +821,7 @@
         "option_img":["img/resin_dice/rose.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -875,7 +875,7 @@
         "option_img":["img/resin_dice/sauron_ring.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -929,7 +929,7 @@
         "option_img":["img/resin_dice/pink_flower.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -983,7 +983,7 @@
         "option_img":["img/resin_dice/botania.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -1037,7 +1037,7 @@
         "option_img":["img/resin_dice/bloom_liquid_core.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -1091,7 +1091,7 @@
         "option_img":["img/resin_dice/transparent_blue_d100.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -1147,7 +1147,7 @@
         "option_img":["img/metal_dice/steampunk_red_copper.png"],
         "option_price":[60],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":60,
@@ -1201,7 +1201,7 @@
         "option_img":["img/metal_dice/royalty_gold.png"],
         "option_price":[60],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":60,
@@ -1255,7 +1255,7 @@
         "option_img":["img/metal_dice/sterling_silver_d20.png"],
         "option_price":[600],
         "option_stock":[10],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":600,
@@ -1309,7 +1309,7 @@
         "option_img":["img/metal_dice/bronze.png"],
         "option_price":[130],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":130,
@@ -1363,7 +1363,7 @@
         "option_img":["img/metal_dice/copper_leaves.png"],
         "option_price":[60],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":60,
@@ -1417,7 +1417,7 @@
         "option_img":["img/metal_dice/24kgold.png"],
         "option_price":[80],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":80,
@@ -1471,7 +1471,7 @@
         "option_img":["img/metal_dice/black_aquamarine_metal.png"],
         "option_price":[80],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":80,
@@ -1525,7 +1525,7 @@
         "option_img":["img/metal_dice/metal_blue.png"],
         "option_price":[50],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":50,
@@ -1579,7 +1579,7 @@
         "option_img":["img/metal_dice/black_hollow_dragon_metal.png"],
         "option_price":[60],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":60,
@@ -1635,7 +1635,7 @@
         "option_img":["img/dice_making/7_dice_slab_mold.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -1689,7 +1689,7 @@
         "option_img":["img/dice_making/d20_chonk_mold.png"],
         "option_price":[15],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":15,
@@ -1743,7 +1743,7 @@
         "option_img":["img/dice_making/1_45kg_epoxy_hardener_resin.png"],
         "option_price":[40],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":40,
@@ -1797,7 +1797,7 @@
         "option_img":["img/dice_making/1kg_uv_resin.png"],
         "option_price":[20],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":20,
@@ -1851,7 +1851,7 @@
         "option_img":["img/dice_making/d20_chonk_mold.png"],
         "option_price":[20],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":20,
@@ -1905,7 +1905,7 @@
         "option_img":["img/dice_making/d20_chonk_mold.png"],
         "option_price":[20],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":20,
@@ -1959,7 +1959,7 @@
         "option_img":["img/dice_making/d20_chonk_mold.png"],
         "option_price":[20],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":20,
@@ -2015,7 +2015,7 @@
         "option_img":["img/dice_accessories/14k_gold_d6_earrings.png"],
         "option_price":[60],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":60,
@@ -2069,7 +2069,7 @@
         "option_img":["img/dice_accessories/dusky_rose_d10_dpercentile_mismatched_earrings.png"],
         "option_price":[20],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":20,
@@ -2123,7 +2123,7 @@
         "option_img":["img/dice_accessories/rose_d4_earrings.png"],
         "option_price":[20],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":20,
@@ -2177,7 +2177,7 @@
         "option_img":["img/dice_accessories/sublime_d4_crystal_earrings.png"],
         "option_price":[50],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":50,
@@ -2231,7 +2231,7 @@
         "option_img":["img/dice_accessories/amethyst_dice_set_earrings.png"],
         "option_price":[40],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":40,
@@ -2285,7 +2285,7 @@
         "option_img":["img/dice_accessories/925_sterling_silver_earrings_necklace.png"],
         "option_price":[40],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":40,
@@ -2339,7 +2339,7 @@
         "option_img":["img/dice_accessories/14k_gold_double_necklace.png"],
         "option_price":[100],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":100,
@@ -2393,7 +2393,7 @@
         "option_img":["img/dice_accessories/d20_dice_cage_necklace.png"],
         "option_price":[20],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":20,
@@ -2447,7 +2447,7 @@
         "option_img":["img/dice_accessories/dragon_d20_necklace.png"],
         "option_price":[20],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":20,
@@ -2501,7 +2501,7 @@
         "option_img":["img/dice_accessories/galaxy_d20_necklace.png"],
         "option_price":[25],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":25,
@@ -2555,7 +2555,7 @@
         "option_img":["img/dice_accessories/silver_d6_charm_necklace.png"],
         "option_price":[15],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":15,
@@ -2609,7 +2609,7 @@
         "option_img":["img/dice_accessories/twin_d6_necklace.png"],
         "option_price":[40],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":40,
@@ -2663,7 +2663,7 @@
         "option_img":["img/dice_accessories/18k_gold_d20_ring.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -2717,7 +2717,7 @@
         "option_img":["img/dice_accessories/duo_d6_brass_ring.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -2771,7 +2771,7 @@
         "option_img":["img/dice_accessories/triple_d6_silver_ring.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -2825,7 +2825,7 @@
         "option_img":["img/dice_accessories/dragon_ring_box.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -2879,7 +2879,7 @@
         "option_img":["img/dice_accessories/dice_vault_tray_box.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -2933,7 +2933,7 @@
         "option_img":["img/dice_accessories/7_set_box.png"],
         "option_price":[40],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":40,
@@ -2987,7 +2987,7 @@
         "option_img":["img/dice_accessories/book_box_tray.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -3041,7 +3041,7 @@
         "option_img":["img/dice_accessories/wood_dice_box.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,
@@ -3095,7 +3095,7 @@
         "option_img":["img/dice_accessories/resin_dice_box.png"],
         "option_price":[30],
         "option_stock":[30],
-        "option_sold":0,
+        "option_sold":[0],
         "option_inStock":[true]
       },
       "avg_price":30,

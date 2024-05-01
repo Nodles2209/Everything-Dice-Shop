@@ -2,22 +2,22 @@
   "Item classifications": [
     {
       "classification_id": 1,
-      "id_identifier": 1,
+      "id_identifier": "1",
       "category_name": "resin_dice"
     },
     {
       "classification_id": 2,
-      "id_identifier": 2,
+      "id_identifier": "2",
       "category_name": "metal_dice"
     },
     {
       "classification_id": 3,
-      "id_identifier": 8,
+      "id_identifier": "8",
       "category_name": "dice_making_materials"
     },
     {
       "classification_id": 4,
-      "id_identifier": 9,
+      "id_identifier": "9",
       "category_name": "dice_accessories"
     }
   ],

@@ -47,7 +47,7 @@ class ListingOptions(db.Model):
     option_img = db.Column(db.String, index=True)
     option_name = db.Column(db.String, index=True)
     option_price = db.Column(db.Float, index=True)
-    options_stock = db.Column(db.Integer, index=True)
+    option_stock = db.Column(db.Integer, index=True)
     option_sold = db.Column(db.Integer, index=True)
     option_inStock = db.Column(db.Boolean, index=True)
 
@@ -118,7 +118,7 @@ class CountryList(db.Model):
     country_id = db.Column(db.Integer, primary_key=True)
     billing = db.relationship("BillingInfo", back_populates="country")
 
-    country_name = db.Column(db.String, index=True, unique=True)
+    country_name = db.Column(db.String, index=True)
 
 
 class BillingInfo(db.Model):
@@ -140,7 +140,6 @@ class BillingInfo(db.Model):
     phone_num = db.Column(db.Integer, index=True)
 
     payment_method = db.Column(db.Integer, db.ForeignKey("payment_method.details_id"))
-    details = db.relationship("PaymentMethod", back_populates="billing")
     billing_type = db.Column(db.String, index=True)
 
     __mapper_args__ = {"polymorphic_identity": "billing_info",
@@ -151,13 +150,19 @@ class ListingBillingInfo(BillingInfo):
     __tablename__ = "listing_billing_info"
     __mapper_args__ = {"polymorphic_identity": "listing_billing_info"}
 
+    details = db.relationship("PaymentMethod", back_populates="listing_billing",
+                              primaryjoin="ListingBillingInfo.payment_method == PaymentMethod.details_id")
+
     listing_id = db.Column(db.Integer, db.ForeignKey("item_listing.listing_id"))
     listing = db.relationship("ItemListing", back_populates="billing")
 
 
-class UserbillingInfo(BillingInfo):
+class UserBillingInfo(BillingInfo):
     __tablename__ = "user_billing_info"
     __mapper_args__ = {"polymorphic_identity": "user_billing_info"}
+
+    details = db.relationship("PaymentMethod", back_populates="user_billing",
+                              primaryjoin="UserBillingInfo.payment_method == PaymentMethod.details_id")
 
     user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
     user = db.relationship("UserProfile", back_populates="billing")
@@ -167,7 +172,8 @@ class PaymentMethod(db.Model):
     __tablename__ = "payment_method"
 
     details_id = db.Column(db.Integer, primary_key=True)
-    billing = db.relationship("BillingInfo", back_populates="details")
+    listing_billing = db.relationship("ListingBillingInfo", back_populates="details")
+    user_billing = db.relationship("UserBillingInfo", back_populates="details")
 
     payment_type = db.Column(db.String, index=True)
     __mapper_args__ = {"polymorphic_identity": "payment_method",
@@ -179,8 +185,9 @@ class CreditCardDetails(PaymentMethod):
     __mapper_args__ = {"polymorphic_identity": "credit_card_details"}
     __schema__ = "credit_card_details"
 
-    card_identifier = db.Column(db.Integer, db.ForeignKey("card_classification.card_identifier"))
-    classification = db.relationship("CardClassification", back_populates="identifier")
+    identifier = db.Column(db.Integer, db.ForeignKey("card_classification.card_identifier"))
+    classification = db.relationship("CardClassification", back_populates="identifier",
+                                     primaryjoin="CreditCardDetails.identifier == CardClassification.card_identifier")
 
     card_num = db.Column(db.Integer, index=True)
     expiry_date = db.Column(db.Date, index=True)
@@ -193,8 +200,9 @@ class CardClassification(db.Model):
 
     classification_id = db.Column(db.Integer, primary_key=True)
 
-    card_identifier = db.Column(db.Integer, db.ForeignKey(CreditCardDetails.card_identifier))
-    identifier = db.relationship("CreditCardDetails", back_populates="classification")
+    card_identifier = db.Column(db.Integer, index=True)
+    identifier = db.relationship("CreditCardDetails", back_populates="classification",
+                                 primaryjoin="CardClassification.card_identifier == CreditCardDetails.identifier")
 
     card_type = db.Column(db.String, index=True)
 
