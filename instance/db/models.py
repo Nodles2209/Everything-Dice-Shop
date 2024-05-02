@@ -1,7 +1,6 @@
-from flask_sqlalchemy import SQLAlchemy
-from src.app.create_app import app
-
-db = SQLAlchemy(app)
+from instance.db.db import db
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin, AnonymousUserMixin
 
 
 class ItemClassification(db.Model):
@@ -39,6 +38,7 @@ class ItemListing(db.Model):
     avg_rating = db.Column(db.Float, index=True)
     num_of_reviews = db.Column(db.Integer, index=True)
     sold = db.Column(db.Integer, index=True)
+    in_stock = db.Column(db.Boolean, index=True)
 
 
 class ListingOptions(db.Model):
@@ -71,9 +71,9 @@ class ListingReviews(db.Model):
     listing = db.relationship("ItemListing", back_populates="reviews",
                               primaryjoin="ListingReviews.listing_id == ItemListing.listing_id")
 
-    review_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
+    review_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.id"))
     user = db.relationship("UserProfile", back_populates="review",
-                           primaryjoin="ListingReviews.review_user_id == UserProfile.user_id")
+                           primaryjoin="ListingReviews.review_user_id == UserProfile.id")
 
     review_title = db.Column(db.String, index=True)
     review_text = db.Column(db.Text, index=True)
@@ -86,9 +86,9 @@ class ReviewReplies(db.Model):
 
     reply_id = db.Column(db.Integer, primary_key=True)
 
-    reply_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
+    reply_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.id"))
     user = db.relationship("UserProfile", back_populates="reply",
-                           primaryjoin="ReviewReplies.reply_user_id == UserProfile.user_id")
+                           primaryjoin="ReviewReplies.reply_user_id == UserProfile.id")
 
     under_review_id = db.Column(db.Integer, db.ForeignKey("listing_reviews.review_id"))
     review = db.relationship("ListingReviews", back_populates="reply",
@@ -97,22 +97,33 @@ class ReviewReplies(db.Model):
     reply_text = db.Column(db.Text, index=True)
 
 
-class UserProfile(db.Model):
+class UserProfile(db.Model, UserMixin):
     __tablename__ = "user_profile"
 
-    user_id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     review = db.relationship("ListingReviews", back_populates="user",
-                             primaryjoin="UserProfile.user_id == ListingReviews.review_user_id")
+                             primaryjoin="UserProfile.id == ListingReviews.review_user_id")
     reply = db.relationship("ReviewReplies", back_populates="user",
-                            primaryjoin="UserProfile.user_id == ReviewReplies.reply_user_id")
+                            primaryjoin="UserProfile.id == ReviewReplies.reply_user_id")
     basket = db.relationship("UserBasket", back_populates="user",
-                             primaryjoin="UserProfile.user_id == UserBasket.basket_user_id")
+                             primaryjoin="UserProfile.id == UserBasket.basket_user_id")
     billing = db.relationship("UserBillingInfo", back_populates="user",
-                              primaryjoin="UserProfile.user_id == UserBillingInfo.user_id")
+                              primaryjoin="UserProfile.id == UserBillingInfo.id")
 
-    username = db.Column(db.String, index=True)
+    username = db.Column(db.String, index=True, unique=True)
     password = db.Column(db.String, index=True)
     email = db.Column(db.String, index=True, unique=True)
+
+    def set_password(self, password):
+        """Create hashed password."""
+        self.password = generate_password_hash(
+            password,
+            method='sha256'
+        )
+
+    def check_password(self, password):
+        """Check hashed password."""
+        return check_password_hash(self.password, password)
 
 
 class UserBasket(db.Model):
@@ -122,9 +133,9 @@ class UserBasket(db.Model):
     basket_item = db.relationship("BasketItem", back_populates="basket",
                                   primaryjoin="UserBasket.basket_id == BasketItem.for_basket_id")
 
-    basket_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
+    basket_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.id"))
     user = db.relationship("UserProfile", back_populates="basket",
-                           primaryjoin="UserBasket.basket_user_id == UserProfile.user_id")
+                           primaryjoin="UserBasket.basket_user_id == UserProfile.id")
 
     session_id = db.Column(db.String, index=True)
 
@@ -200,9 +211,9 @@ class UserBillingInfo(BillingInfo):
     details = db.relationship("PaymentMethod", back_populates="user_billing",
                               primaryjoin="UserBillingInfo.payment_method == PaymentMethod.details_id")
 
-    user_id = db.Column(db.Integer, db.ForeignKey("user_profile.user_id"))
+    id = db.Column(db.Integer, db.ForeignKey("user_profile.id"))
     user = db.relationship("UserProfile", back_populates="billing",
-                           primaryjoin="UserBillingInfo.user_id == UserProfile.user_id")
+                           primaryjoin="UserBillingInfo.id == UserProfile.id")
 
 
 class PaymentMethod(db.Model):
