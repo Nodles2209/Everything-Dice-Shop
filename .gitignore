@@ -2,3 +2,4 @@
 /venv
 /.idea
 /instance/app.db
+.python-version
