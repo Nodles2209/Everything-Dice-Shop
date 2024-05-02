@@ -7,21 +7,18 @@
 <body>
     <h1>Everything-dice shop</h1>
     <ul>
-        <li><a href="{{url_for('galleryPage')}}">Home</a></li>
+        <li><a href="{{url_for('homePage')}}">Home</a></li>
         {% for item_category in categories %}
             <li><a href="{{ url_for('loadCategory', category=item_category) }}">{{ item_category }}</a></li>
         {% endfor %}
     </ul>
-    {% for home_category, item_list in home_display %}
-        <h2>{{ home_category }}</h2>
+    {% for item in all_items %}
         <ul>
-            {% for item in item_list %}
-                {% if item.in_stock %}
-                    <li><a href="{{ url_for('loadItem', item_id=item.id) }}">{{ item.name }}</a></li>
-                    <img src="{{ url_for('static', filename=item.img) }}">
-                    <li>{{ 'Price : ' ~ item.price[0] }}</li>
-                {% endif %}
-            {% endfor %}
+            {% if item.in_stock %}
+                <li><a href="{{ url_for('loadItem', item_id=item.listing_id) }}">{{ item.listing_name }}</a></li>
+                <img src="{{ url_for('static', filename=item.thumbnail_img) }}">
+                <li>{{ 'Price : ' ~ item.avg_price }}</li>
+            {% endif %}
         </ul>
     {% endfor %}
 </body>
