@@ -16,7 +16,7 @@
         <ul>
             {% if item.in_stock %}
                 <li><a href="{{ url_for('loadItem', item_id=item.listing_id) }}">{{ item.listing_name }}</a></li>
-                <img src="{{ url_for('static', filename=item.thumbnail_img) }}">
+                <img src="{{ url_for('static', filename=item.thumbnail_img) }}" alt="{{ item.listing_name }}">
                 <li>{{ 'Price : ' ~ item.avg_price }}</li>
             {% endif %}
         </ul>
