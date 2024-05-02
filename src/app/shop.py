@@ -1,6 +1,9 @@
-from create_app import app
 from flask import (Flask, render_template, redirect, url_for, request)
+from create_app import InitApp
+from instance.db.models import *
 from instance.db.initDB import dbCheck
+
+app = InitApp()
 dbCheck()
 
 
@@ -12,7 +15,21 @@ def faq():
 
 @app.route('/')
 def homePage():
-    return render_template('index.html', categories=all_categories, home_display=home_display.items())
+    try:
+        all_items = ItemListing.query.with_entities(ItemListing.listing_id,
+                                                    ItemListing.listing_name,
+                                                    ItemListing.avg_price,
+                                                    ItemListing.thumbnail_img,
+                                                    ItemListing.in_stock).all()
+
+        all_categories = ItemClassification.query.with_entities(ItemClassification.category_name).all()
+        all_categories = [category[0] for category in all_categories]
+
+        return render_template('index.html', categories=all_categories, all_items=all_items)
+
+    except Exception as e:
+        error_text = "The error: " + str(e)
+        return error_text
 
 
 def getDatabaseQuery():
@@ -28,41 +45,23 @@ def search(query):
 
 @app.route('/<string:category>')
 def loadCategory(category):
-    return render_template('loadCategory.html', category_items=item_json[category], categories=all_categories,
-                           category_name=category)
+    # return render_template('loadCategory.html', category_items=item_json[category], categories=all_categories, category_name=category)
+    pass
 
 
 @app.route('/<int:item_id>')
 def loadItem(item_id):
-    for item_category, item_list in item_json.items():
-        for item in item_list:
-            if item['id'] == item_id:
-                return render_template('singleItem.html', item=item, categories=all_categories)
+    # for item_category, item_list in item_json.items():
+    #     for item in item_list:
+    #        if item['id'] == item_id:
+    #             return render_template('singleItem.html', item=item, categories=all_categories)
+    pass
 
 
 @app.route('/reviewThread')
 def loadReviewThread():
     # load expanded review thread upon clicking on review link
     # return render_template('reviewThread.html')
-    pass
-
-
-@app.route('/signIn')
-def signIn():
-    # return render_template('signIn.html')
-    pass
-
-
-@app.route('/forgotPassword')
-def forgotPassword():
-    # render_template('forgotPassword.html')
-    # ask which email the password is for and then send email to user with reset link if email exists
-    pass
-
-
-@app.route('/signUp')
-def signUp():
-    # return render_template('signUp.html')
     pass
 
 
