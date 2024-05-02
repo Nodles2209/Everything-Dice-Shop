@@ -1,10 +1,20 @@
 from flask import (Flask, render_template, redirect, url_for, request)
+from sqlalchemy import asc, desc
 from create_app import InitApp
 from instance.db.models import *
 from instance.db.initDB import dbCheck
 
 app = InitApp()
 dbCheck()
+
+
+def getCategoryNames():
+    all_categories = ItemClassification.query \
+        .with_entities(ItemClassification.category_name) \
+        .order_by(asc(ItemClassification.id_identifier)).all()
+    all_categories = [category[0] for category in all_categories]
+
+    return all_categories
 
 
 @app.route('/faq')
@@ -16,16 +26,14 @@ def faq():
 @app.route('/')
 def homePage():
     try:
-        all_items = ItemListing.query.with_entities(ItemListing.listing_id,
-                                                    ItemListing.listing_name,
-                                                    ItemListing.avg_price,
-                                                    ItemListing.thumbnail_img,
-                                                    ItemListing.in_stock).all()
+        all_items = ItemListing.query \
+            .with_entities(ItemListing.listing_id,
+                           ItemListing.listing_name,
+                           ItemListing.avg_price,
+                           ItemListing.thumbnail_img,
+                           ItemListing.in_stock).all()
 
-        all_categories = ItemClassification.query.with_entities(ItemClassification.category_name).all()
-        all_categories = [category[0] for category in all_categories]
-
-        return render_template('index.html', categories=all_categories, all_items=all_items)
+        return render_template('index.html', categories=getCategoryNames(), all_items=all_items)
 
     except Exception as e:
         error_text = "The error: " + str(e)
@@ -45,8 +53,12 @@ def search(query):
 
 @app.route('/<string:category>')
 def loadCategory(category):
-    # return render_template('loadCategory.html', category_items=item_json[category], categories=all_categories, category_name=category)
-    pass
+    category_items = ItemListing.query \
+        .join(ItemClassification, ItemListing.id_identifier == ItemClassification.id_identifier) \
+        .filter_by(category_name=category).all()
+    return render_template('loadCategory.html', category_items=category_items,
+                           categories=getCategoryNames(),
+                           category_name=category)
 
 
 @app.route('/<int:item_id>')
