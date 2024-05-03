@@ -1,8 +1,12 @@
 from flask import (Flask, render_template, redirect, url_for, request)
 from sqlalchemy import asc, desc
+import wtforms
+from flask_wtf import FlaskForm
+
 from create_app import InitApp
 from instance.db.initDB import dbCheck
 from instance.db.models import *
+from forms import *
 
 app = InitApp()
 dbCheck()
@@ -40,9 +44,9 @@ def getDatabaseQuery():
     pass
 
 
-@app.route('/search', methods=['POST'])
+@app.route('/all', methods=['POST'])
 def search(query):
-    # return render_template('search.html', query=query)
+    # return render_template('allItems.html', query=query)
     pass
 
 
@@ -56,7 +60,7 @@ def loadCategory(category):
                            category_name=category)
 
 
-@app.route('/<int:item_id>')
+@app.route('/<int:item_id>', methods=['GET', 'POST'])
 def loadItem(item_id):
     listing = ItemListing.query \
         .filter_by(listing_id=item_id) \
@@ -74,17 +78,18 @@ def loadItem(item_id):
                        ListingOptions.option_img,
                        ListingOptions.option_inStock).all()
 
-    return render_template('singleItem.html',
-                           item=listing,
-                           categories=getCategoryNames(),
-                           item_options=item_options)
+    form = OptionsForm()
+    form.option.choices = [(option.option_name, option.option_name) for option in item_options]
+    form.option.default = item_options[0].option_name
 
-
-@app.route('/reviewThread')
-def loadReviewThread():
-    # load expanded review thread upon clicking on review link
-    # return render_template('reviewThread.html')
-    pass
+    if form.validate_on_submit():
+        return redirect(url_for('homePage'))
+    else:
+        return render_template('singleItem.html',
+                               item=listing,
+                               categories=getCategoryNames(),
+                               item_options=item_options,
+                               form=form)
 
 
 @app.route('/checkout')
@@ -96,16 +101,6 @@ def checkOut():
 @app.route('/shoppingBasket')
 def shoppingBasket():
     # return render_template('shoppingBasket.html')
-    pass
-
-
-@app.route('/addToBasket')
-def addToBasket():
-    # displays page where you either
-    # go to checkout
-    # go to basket
-    # go to item page
-    # go to home page to search more items
     pass
 
 
