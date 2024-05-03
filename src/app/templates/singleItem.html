@@ -1,32 +1,35 @@
+{% extends "base.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ category_name }}</title>
 </head>
 <body>
-    <h1>Everything-dice shop</h1>
-    <ul>
-        <li><a href="{{url_for('homePage')}}">Home</a></li>
-        {% for item_category in categories %}
-            <li><a href="{{ url_for('loadCategory', category=item_category) }}">{{ item_category }}</a></li>
-        {% endfor %}
-    </ul>
-    <h2>{{ item.listing_name }}</h2>
-    <img src="{{ url_for('static', filename=item.thumbnail_img) }}" alt="{{ item.listing_name }}">
-    {% if item.in_stock %}
-        {% for option in item_options %}
-            {% if option.option_inStock %}
-                <p>{{ 'Options : ' ~ option.option_name }}</p>
-                <p>{{ 'Price : ' ~ option.option_price }}</p>
-                <img src="{{ url_for('static', filename=option.option_img) }}" alt="{{ option.option_name }}">
+    {% block content %}
+        <div class="container-fluid">
+            <h2>{{ item.listing_name }}</h2>
+            <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
+                 class="img-responsive"
+                 alt="{{ item.listing_name }}">
+            {% if item.in_stock %}
+                {% for option in item_options %}
+                    <img src="{{ url_for('static', filename=option.option_img) }}"
+                         class="img-thumbnail img-responsive"
+                         alt="{{ option.option_name }}">
+                {% endfor %}
+                <div>
+                    <form method="post">
+                        {{ form.csrf_token }}
+                        {{ wtf.quick_form(form) }}
+                    </form>
+                </div>
             {% else %}
                 <p>Out of stock</p>
             {% endif %}
-        {% endfor %}
-        <p>Add to basket</p>
-    {% else %}
-        <p>Out of stock</p>
-    {% endif %}
+        </div>
+    {% endblock %}
 </body>
 </html>

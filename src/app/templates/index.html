@@ -1,25 +1,33 @@
+{% extends "base.html" %}
+
 <!DOCTYPE html>
 <html lang="english">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Everything dice shop</title>
 </head>
 <body>
-    <h1>Everything-dice shop</h1>
-    <ul>
-        <li><a href="{{url_for('homePage')}}">Home</a></li>
-        {% for item_category in categories %}
-            <li><a href="{{ url_for('loadCategory', category=item_category) }}">{{ item_category }}</a></li>
-        {% endfor %}
-    </ul>
-    {% for item in all_items %}
-        <ul>
-            {% if item.in_stock %}
-                <li><a href="{{ url_for('loadItem', item_id=item.listing_id) }}">{{ item.listing_name }}</a></li>
-                <img src="{{ url_for('static', filename=item.thumbnail_img) }}" alt="{{ item.listing_name }}">
-                <li>{{ 'Price : ' ~ item.avg_price }}</li>
-            {% endif %}
-        </ul>
-    {% endfor %}
+    {% block content %}
+        <div class="container-fluid">
+            {% for item in all_items %}
+                <ul>
+                    {% if item.in_stock %}
+                        <li>
+                            <a href="{{ url_for('loadItem', item_id=item.listing_id) }}">
+                                {{ item.listing_name }}
+                            </a>
+                        </li>
+                        <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
+                             class="img-thumbnail img-responsive"
+                             alt="{{ item.listing_name }}">
+                        <li>
+                            {{ 'Price : ' ~ item.avg_price }}
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endfor %}
+        </div>
+    {% endblock %}
 </body>
 </html>
