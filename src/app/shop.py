@@ -1,8 +1,8 @@
 from flask import (Flask, render_template, redirect, url_for, request)
 from sqlalchemy import asc, desc
 from create_app import InitApp
-from instance.db.models import *
 from instance.db.initDB import dbCheck
+from instance.db.models import *
 
 app = InitApp()
 dbCheck()
@@ -26,12 +26,7 @@ def faq():
 @app.route('/')
 def homePage():
     try:
-        all_items = ItemListing.query \
-            .with_entities(ItemListing.listing_id,
-                           ItemListing.listing_name,
-                           ItemListing.avg_price,
-                           ItemListing.thumbnail_img,
-                           ItemListing.in_stock).all()
+        all_items = ItemListing.query.all()
 
         return render_template('index.html', categories=getCategoryNames(), all_items=all_items)
 
@@ -63,11 +58,26 @@ def loadCategory(category):
 
 @app.route('/<int:item_id>')
 def loadItem(item_id):
-    # for item_category, item_list in item_json.items():
-    #     for item in item_list:
-    #        if item['id'] == item_id:
-    #             return render_template('singleItem.html', item=item, categories=all_categories)
-    pass
+    listing = ItemListing.query \
+        .filter_by(listing_id=item_id) \
+        .with_entities(ItemListing.listing_name,
+                       ItemListing.listing_description,
+                       ItemListing.thumbnail_img,
+                       ItemListing.in_stock,
+                       ItemListing.footprint,
+                       ItemListing.num_of_reviews).first()
+
+    item_options = ListingOptions.query \
+        .filter_by(for_listing_id=item_id) \
+        .with_entities(ListingOptions.option_name,
+                       ListingOptions.option_price,
+                       ListingOptions.option_img,
+                       ListingOptions.option_inStock).all()
+
+    return render_template('singleItem.html',
+                           item=listing,
+                           categories=getCategoryNames(),
+                           item_options=item_options)
 
 
 @app.route('/reviewThread')

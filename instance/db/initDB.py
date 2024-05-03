@@ -1,10 +1,12 @@
-from instance.db.models import *
-from instance.db.db import db
-from src.app.create_app import InitApp, cur_path, parent
+import datetime
 import os
 from flask import json
-import datetime
-from pathlib import Path
+
+from paths import jsonPath
+from instance.db.models import *
+from instance.db.sqlalchemyDB import db
+from instance.db import getDBLocation
+from src.app.create_app import InitApp
 
 app = InitApp()
 
@@ -15,7 +17,7 @@ def createAppDB():
 
 
 def initLookupTables():
-    lookup_file = os.path.join(cur_path, 'static', 'json', 'reference_tables.json')
+    lookup_file = os.path.join(jsonPath, 'reference_tables.json')
     lookup_data = json.load(open(lookup_file, encoding='utf-8'))
 
     for classification in lookup_data["Item classifications"]:
@@ -34,7 +36,7 @@ def initLookupTables():
 
 
 def initListings():
-    items_file = os.path.join(cur_path, 'static', 'json', 'all_items.json')
+    items_file = os.path.join(jsonPath, 'all_items.json')
     item_data = json.load(open(items_file, encoding='utf-8'))
 
     for category in item_data:
@@ -129,12 +131,8 @@ def initAppDB():
 
 @app.before_request
 def dbCheck():
-    myDB = Path(os.path.join(parent, 'instance', 'app.db'))
-    if myDB.is_file():
+    if getDBLocation().is_file():
         createAppDB()
     else:
         createAppDB()
         initAppDB()
-
-
-dbCheck()

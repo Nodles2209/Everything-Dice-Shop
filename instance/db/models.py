@@ -1,4 +1,4 @@
-from instance.db.db import db
+from instance.db.sqlalchemyDB import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, AnonymousUserMixin
 

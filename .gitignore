@@ -1,5 +1,5 @@
 /config
 /venv
 /.idea
-/instance/app.db
+/instance/db/app.db
 .python-version
