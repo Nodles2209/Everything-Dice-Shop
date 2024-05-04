@@ -8,9 +8,8 @@ class OptionsForm(FlaskForm):
     submit = wtforms.SubmitField('Add to basket')
 
 
-class ToCheckoutForm(FlaskForm):
-    changeQuantity = wtforms.IntegerField('Change quantity', widget=wtforms.widgets.NumberInput(min=1))
-    delete = wtforms.SubmitField('Delete')
+class ShoppingBasketForm(FlaskForm):
+    clear = wtforms.SubmitField('Clear basket')
     checkout = wtforms.SubmitField('Checkout')
 
 
