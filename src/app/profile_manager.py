@@ -3,15 +3,13 @@ from create_app import InitApp
 import instance.db.models as models
 from flask import (Flask, render_template, redirect, url_for, request)
 
-app = InitApp().app
-
+app = InitApp()
 login_manager = LoginManager(app)
 login_manager.session_protection = "strong"
-login_manager.init_app(app)
 
 
 @login_manager.user_loader
-def load_user(user_id):
+def loadUser(user_id):
     """
     Returns a user object from the database based on the user_id provided
     :param int user_id: id (primary key) field from user model
