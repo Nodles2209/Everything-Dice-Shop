@@ -4,7 +4,7 @@
       "listing_id":100000,
       "listing_name":"Galaxy dice set",
       "thumbnail_img":"img/resin_dice/galaxy.png",
-      "listing_description":"The full set will come with D4 D6 D8 D10 D% D12 D20(normal).\n\n11 dice set will come with D4 D6x4 D8 D10 D% D12 D20(normal)x2 (the full set + D6x3 + D20).\n\nThe height of the dice:\n\nChonk D20 ≈ 30mm\n\nNormal D20 ≈ 20mm\n\nD12 D4 ≈ 19mm\n\nD10 D% D8 D6 ≈ 20mm",
+      "listing_description":"The full set will come with D4 D6 D8 D10 D% D12 D20(normal).</br></br>11 dice set will come with D4 D6x4 D8 D10 D% D12 D20(normal)x2 (the full set + D6x3 + D20).</br></br>The height of the dice:</br></br>Chonk D20 ≈ 30mm</br></br>Normal D20 ≈ 20mm</br></br>D12 D4 ≈ 19mm</br></br>D10 D% D8 D6 ≈ 20mm",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -19,7 +19,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-11T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -75,7 +76,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-11-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -116,7 +118,7 @@
       "listing_id":100002,
       "listing_name":"Hollow purple liquid core set",
       "thumbnail_img":"img/resin_dice/hollow_purple_liquid_core_set.png",
-      "listing_description":"The full set will come with D4 D6 D8 D10 D% D12 D20(normal).\n11 dice set will come with D4 D6x4 D8 D10 D% D12 D20(normal)x2 (the full set + D6x3 + D20).\n\nThe height of the dice:\nChonk D20 ≈ 30mm\nNormal D20 ≈ 20mm\nD12 D4 ≈ 19mm\nD10 D% D8 D6 ≈ 16mm",
+      "listing_description":"The full set will come with D4 D6 D8 D10 D% D12 D20(normal).</br>11 dice set will come with D4 D6x4 D8 D10 D% D12 D20(normal)x2 (the full set + D6x3 + D20).</br></br>The height of the dice:</br>Chonk D20 ≈ 30mm</br>Normal D20 ≈ 20mm</br>D12 D4 ≈ 19mm</br>D10 D% D8 D6 ≈ 16mm",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -131,7 +133,8 @@
       "num_of_reviews":0,
       "sold":10,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2021-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -172,7 +175,7 @@
       "listing_id":100003,
       "listing_name":"Flame dice set",
       "thumbnail_img":"img/resin_dice/flame.png",
-      "listing_description":"A fiery yellow, orange, red, and black gradient set with foil accents, nail glitter, and holographic foil - mimicking burning embers!\nThis set includes one D4, D6, D8, D10, D%, D12, and D20. ✨",
+      "listing_description":"A fiery yellow, orange, red, and black gradient set with foil accents, nail glitter, and holographic foil - mimicking burning embers!</br>This set includes one D4, D6, D8, D10, D%, D12, and D20. ✨",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -187,7 +190,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-21T00:00:00+00:00",
+      "footprint":1.3,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -228,7 +232,7 @@
       "listing_id":100004,
       "listing_name":"Blood red liquid core D20 chonk dice",
       "thumbnail_img":"img/resin_dice/blood_liquid_core_chonk.png",
-      "listing_description":"The full set will come with D4 D6 D8 D10 D% D12 D20.\n\n11 dice set will come with D4 D6x4 D8 D10 D% D12 D20x2 (the full set + D6x3 + D20).",
+      "listing_description":"The full set will come with D4 D6 D8 D10 D% D12 D20.</br></br>11 dice set will come with D4 D6x4 D8 D10 D% D12 D20x2 (the full set + D6x3 + D20).",
       "options":{
         "option_id":[1],
         "option_name":["Single D20 chonk"],
@@ -243,7 +247,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -284,7 +289,7 @@
       "listing_id":100005,
       "listing_name":"Celestial shower (dark) dice set",
       "thumbnail_img":"img/resin_dice/celestial_dark.png",
-      "listing_description":"These are handmade and polished sharp edge resin dice with inclusions. And the dice are infused with beautiful glitter flakes. I recommend that you can roll them on something with a soft surface, like a soft wool felt dice tray.\n\nEach dice is well weight and well balance",
+      "listing_description":"These are handmade and polished sharp edge resin dice with inclusions. And the dice are infused with beautiful glitter flakes. I recommend that you can roll them on something with a soft surface, like a soft wool felt dice tray.</br></br>Each dice is well weight and well balance",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -299,7 +304,8 @@
       "num_of_reviews":0,
       "sold":20,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -340,7 +346,7 @@
       "listing_id":100006,
       "listing_name":"Celestial shower (light) dice set",
       "thumbnail_img":"img/resin_dice/celestial_light.png",
-      "listing_description":"This poly set is cast in red and blue resin and contains golden glitter falkes, making it stand out across all sides of the table.\n\nEach poly 7 piece set contains one D20, D12, D10, D8, D6, D4 and percentile dice.",
+      "listing_description":"This poly set is cast in red and blue resin and contains golden glitter falkes, making it stand out across all sides of the table.</br></br>Each poly 7 piece set contains one D20, D12, D10, D8, D6, D4 and percentile dice.",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -355,7 +361,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-21T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -411,7 +418,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2022-04-01T00:00:00+00:00",
+      "footprint":0.6,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -452,7 +460,7 @@
       "listing_id":100008,
       "listing_name":"Space Koi liquid core D20 dice",
       "thumbnail_img":"img/resin_dice/space_koi_d20.png",
-      "listing_description":"✨✨ The quality of the liquid core dice is amazing, and the numbers are painted on flawlessly. I would highly recommend the product! Easily the most unique dice you've bought on Etsy.\n\n✨✨ Well made, and really vivid colors . Made of natural resin, it has excellent rolling performance. When these exquisite liquid core dice scroll, your whole D&D team will envy them.",
+      "listing_description":"✨✨ The quality of the liquid core dice is amazing, and the numbers are painted on flawlessly. I would highly recommend the product! Easily the most unique dice you've bought on Etsy.</br></br>✨✨ Well made, and really vivid colors . Made of natural resin, it has excellent rolling performance. When these exquisite liquid core dice scroll, your whole D&D team will envy them.",
       "options":{
         "option_id":[1],
         "option_name":["Single D20"],
@@ -467,7 +475,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-31T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -508,7 +517,7 @@
       "listing_id":100009,
       "listing_name":"Petri style water dice set",
       "thumbnail_img":"img/resin_dice/aqua_petri.png",
-      "listing_description":"This handmade sharp edge resin dice set uses a petri pour style with blue and teal alcohol inks dropped in.\n\nThis 8 piece set includes - d4 (pyramid and teardrop), d6, d8, d10, d%, d12 and d20.",
+      "listing_description":"This handmade sharp edge resin dice set uses a petri pour style with blue and teal alcohol inks dropped in.</br></br>This 8 piece set includes - d4 (pyramid and teardrop), d6, d8, d10, d%, d12 and d20.",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -523,7 +532,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2023-01-01T00:00:00+00:00",
+      "footprint":1.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -564,7 +574,7 @@
       "listing_id":100010,
       "listing_name":"Eternal sunset dice set",
       "thumbnail_img":"img/resin_dice/eternal_sunset.png",
-      "listing_description":"A gorgeous purple and gold gradient set.\nThis set includes one D4, D6, D8, D10, D%, D12, and D20. ✨\nFor use with DnD, Pathfinder, and other TTRPG systems.",
+      "listing_description":"A gorgeous purple and gold gradient set.</br>This set includes one D4, D6, D8, D10, D%, D12, and D20. ✨</br>For use with DnD, Pathfinder, and other TTRPG systems.",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -579,7 +589,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -635,7 +646,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-04-04T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -676,7 +688,7 @@
       "listing_id":100012,
       "listing_name":"Gojo red/blue liquid core dice set",
       "thumbnail_img":"img/resin_dice/red_blue_liquid_core_set.png",
-      "listing_description":"Each sharp resin die is hand-polished and polished to keep its beautiful sharp edges.\nThe flowing liquid sand in the middle is the biggest feature of this dice. Each set of resin dice has different font colors and is easy to read.",
+      "listing_description":"Each sharp resin die is hand-polished and polished to keep its beautiful sharp edges.</br>The flowing liquid sand in the middle is the biggest feature of this dice. Each set of resin dice has different font colors and is easy to read.",
       "options":{
         "option_id":[1],
         "option_name":["Single D20 chonk"],
@@ -691,7 +703,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2024-04-04T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -732,7 +745,7 @@
       "listing_id":100013,
       "listing_name":"Valentine's day D20 chonk dice",
       "thumbnail_img":"img/resin_dice/valentines_chonk.png",
-      "listing_description":"This listing is for 1 individual D20 Chonk size 40mm.\n\nNote that each set is unique, each set is cured in a pressure pot to help minimize bubbles to prevent weight distribution issues, but some may still appear. Mishandling the dice can cause scratches, chips, or breakage. Please handle it with care.",
+      "listing_description":"This listing is for 1 individual D20 Chonk size 40mm.</br></br>Note that each set is unique, each set is cured in a pressure pot to help minimize bubbles to prevent weight distribution issues, but some may still appear. Mishandling the dice can cause scratches, chips, or breakage. Please handle it with care.",
       "options":{
         "option_id":[1],
         "option_name":["Single D20 chonk"],
@@ -747,7 +760,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2022-02-21T00:00:00+00:00",
+      "footprint":2.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -788,7 +802,7 @@
       "listing_id":100014,
       "listing_name":"Night koi liquid core dice set",
       "thumbnail_img":"img/resin_dice/night_koi_set.png",
-      "listing_description":"7 Pcs Dice Set: D4, D6, D8, D10, D%, D12, D20 . D01-10 are liquid core dice , R01 is resin dice not liquid core\n\nThis resin series of DnD dice is with liquid core, which also has sharp edges and exquisite numbers. The numbers on the D&D dice are clear and easy to read. Each dice is perfect in details and well crafted. ",
+      "listing_description":"7 Pcs Dice Set: D4, D6, D8, D10, D%, D12, D20 . D01-10 are liquid core dice , R01 is resin dice not liquid core</br></br>This resin series of DnD dice is with liquid core, which also has sharp edges and exquisite numbers. The numbers on the D&D dice are clear and easy to read. Each dice is perfect in details and well crafted. ",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -803,7 +817,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.7,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -844,7 +859,7 @@
       "listing_id":100015,
       "listing_name":"Dried rose dice set",
       "thumbnail_img":"img/resin_dice/rose.png",
-      "listing_description":"The full set will come with D4 D6 D8 D10 D% D12 D20(normal).\n\n11 dice set will come with D4 D6x4 D8 D10 D% D12 D20(normal)x2 (the full set + D6x3 + D20).\n\nThe height of the dice:\n\nChonk D20 ≈ 30mm\n\nNormal D20 ≈ 20mm\n\nD12 D4 ≈ 19mm\n\nD10 D% D8 D6 ≈ 20mm",
+      "listing_description":"The full set will come with D4 D6 D8 D10 D% D12 D20(normal).</br></br>11 dice set will come with D4 D6x4 D8 D10 D% D12 D20(normal)x2 (the full set + D6x3 + D20).</br></br>The height of the dice:</br></br>Chonk D20 ≈ 30mm</br></br>Normal D20 ≈ 20mm</br></br>D12 D4 ≈ 19mm</br></br>D10 D% D8 D6 ≈ 20mm",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -859,7 +874,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -915,7 +931,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2021-02-22T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -956,7 +973,7 @@
       "listing_id":100017,
       "listing_name":"Cherry blossom dice set",
       "thumbnail_img":"img/resin_dice/pink_flower.png",
-      "listing_description":"An elegant floral and rose gold flake design set against a clear-pearly white gradient.\nThis set includes one D4, D6, D8, D10, D%, D12, and D20. ✨",
+      "listing_description":"An elegant floral and rose gold flake design set against a clear-pearly white gradient.</br>This set includes one D4, D6, D8, D10, D%, D12, and D20. ✨",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -971,7 +988,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":5.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1012,7 +1030,7 @@
       "listing_id":100018,
       "listing_name":"Botanical dice set",
       "thumbnail_img":"img/resin_dice/botania.png",
-      "listing_description":"Beautiful handmade resin dice for gifts and collections.\n\nEach set of dice is handcrafted and each set is unique.\n\n\uD83C\uDF81\uD83C\uDF81There are 7 dice in a set:\nD20, D12, D10 (00-90 and 0-9), D8, D6 and D4.\n\nThe dice are very light, only 40 grams.",
+      "listing_description":"Beautiful handmade resin dice for gifts and collections.</br></br>Each set of dice is handcrafted and each set is unique.</br></br>\uD83C\uDF81\uD83C\uDF81There are 7 dice in a set:</br>D20, D12, D10 (00-90 and 0-9), D8, D6 and D4.</br></br>The dice are very light, only 40 grams.",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -1027,7 +1045,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1068,7 +1087,7 @@
       "listing_id":100019,
       "listing_name":"Bloom liquid core dice set",
       "thumbnail_img":"img/resin_dice/bloom_liquid_core.png",
-      "listing_description":"This set of 7 polyhedral dice has cute tiny pink flowers inside.\nThe set includes the following dice: D4, D6, D8, D12, D10, D% and D20.",
+      "listing_description":"This set of 7 polyhedral dice has cute tiny pink flowers inside.</br>The set includes the following dice: D4, D6, D8, D12, D10, D% and D20.",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -1083,7 +1102,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2010-11-12T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1124,7 +1144,7 @@
       "listing_id":100020,
       "listing_name":"Transparent blue d100 dice",
       "thumbnail_img":"img/resin_dice/transparent_blue_d100.png",
-      "listing_description":"You know what’s large, multifaceted, and will likely improve your TTRPG experience? If your first answer was Joe Manganiello, that’s fair but we can’t sell him. How about instead you try a hundred-sided die? It is 100% likely to make all your percentile rolls 50% easier than using two d10s, and 1000% more bombastic!\n",
+      "listing_description":"You know what’s large, multifaceted, and will likely improve your TTRPG experience? If your first answer was Joe Manganiello, that’s fair but we can’t sell him. How about instead you try a hundred-sided die? It is 100% likely to make all your percentile rolls 50% easier than using two d10s, and 1000% more bombastic!</br>",
       "options":{
         "option_id":[1],
         "option_name":["Single d100"],
@@ -1139,7 +1159,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2022-12-12T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1182,7 +1203,7 @@
       "listing_id":200000,
       "listing_name":"Steampunk red copper dice set",
       "thumbnail_img":"img/metal_dice/steampunk_red_copper.png",
-      "listing_description":"\uD83C\uDF88Each set of 7 dice includes:\n\nD20, D12, D10(00-90 and 0-9), D8, D6 and D4.\n\nHeavy ~180g per set",
+      "listing_description":"\uD83C\uDF88Each set of 7 dice includes:</br></br>D20, D12, D10(00-90 and 0-9), D8, D6 and D4.</br></br>Heavy ~180g per set",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -1197,7 +1218,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2011-05-08T00:00:00+00:00",
+      "footprint":2.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1253,7 +1275,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1294,7 +1317,7 @@
       "listing_id":200002,
       "listing_name":"925 Sterling silver D20 dice",
       "thumbnail_img":"img/metal_dice/sterling_silver_d20.png",
-      "listing_description":"The collector D20 dice is made of 925 sterling silver and is solid!\n\nWith a weight of 50 grams and a diagonal of 24.5 mm, the playable cube is unique on the market in terms of its size and solid structure!\n\nAll 20 sides are polished, the numbers are recessed and the 1 is hallmarked.\nPrecision and a very good feel characterize it, classic and yet in an elegant, pure design. Due to the manual work, each of our works is unique! The perfect combination of style and value!",
+      "listing_description":"The collector D20 dice is made of 925 sterling silver and is solid!</br></br>With a weight of 50 grams and a diagonal of 24.5 mm, the playable cube is unique on the market in terms of its size and solid structure!</br></br>All 20 sides are polished, the numbers are recessed and the 1 is hallmarked.</br>Precision and a very good feel characterize it, classic and yet in an elegant, pure design. Due to the manual work, each of our works is unique! The perfect combination of style and value!",
       "options":{
         "option_id":[1],
         "option_name":["Single D20"],
@@ -1309,7 +1332,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2024-09-03T00:00:00+00:00",
+      "footprint":8.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1365,7 +1389,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":3.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1406,7 +1431,7 @@
       "listing_id":200004,
       "listing_name":"Copper dice set with leaves design",
       "thumbnail_img":"img/metal_dice/copper_leaves.png",
-      "listing_description":"These DnD dice sets adopt vine design with details. The RPG dice set has beautiful edges with patterns. The numbers on the D&D dice are easy to read, all sets are in details and well crafted. The metal dice set also brings amazing rolling experience.\n\nItem: Top Quality Metal Dice Set\nMaterial: Zinc Alloy\nQuantity: 7 Pieces Dice Set (D20, D12, D10, D%, D8, D6, D4)\n",
+      "listing_description":"These DnD dice sets adopt vine design with details. The RPG dice set has beautiful edges with patterns. The numbers on the D&D dice are easy to read, all sets are in details and well crafted. The metal dice set also brings amazing rolling experience.</br></br>Item: Top Quality Metal Dice Set</br>Material: Zinc Alloy</br>Quantity: 7 Pieces Dice Set (D20, D12, D10, D%, D8, D6, D4)</br>",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -1421,7 +1446,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-06-16T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1462,7 +1488,7 @@
       "listing_id":200005,
       "listing_name":"Tamarand, 24k gold plated dice set",
       "thumbnail_img":"img/metal_dice/24kgold.png",
-      "listing_description":"Plated in a resplendently glorious 24k gold, this Dragon God and the King of Justice come fully leveled up and feature 2 D20s, 1 D12, 1 D%, 2 D10, 2 D8, 3D6, and 1D4 complete in a vegan leather bookcase dice vault designed to fully show off the sets full beauty.\n\nThe numbers on these dice have deliberately been left without ink, as we feel if you are paying for gold dice, you want the entire thing to be glorious and golden!",
+      "listing_description":"Plated in a resplendently glorious 24k gold, this Dragon God and the King of Justice come fully leveled up and feature 2 D20s, 1 D12, 1 D%, 2 D10, 2 D8, 3D6, and 1D4 complete in a vegan leather bookcase dice vault designed to fully show off the sets full beauty.</br></br>The numbers on these dice have deliberately been left without ink, as we feel if you are paying for gold dice, you want the entire thing to be glorious and golden!",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -1477,7 +1503,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1518,7 +1545,7 @@
       "listing_id":200006,
       "listing_name":"Sage’s Rift Stones – Black/Aquamarine Metal Polyhedral Dice Set",
       "thumbnail_img":"img/metal_dice/black_aquamarine_metal.png",
-      "listing_description":"Harness the powers of Sage’s Rift Stones!\n\nThis exquisite metal 7-dice set features dark silver with aquamarine glitter stripe-layered design and black ink. The dice set is masterfully designed with balanced textures and matching ink style. Not only are the dice beautiful jewelry pieces, the dice are balanced, heavy, solid, and rolls/feels exceptional.",
+      "listing_description":"Harness the powers of Sage’s Rift Stones!</br></br>This exquisite metal 7-dice set features dark silver with aquamarine glitter stripe-layered design and black ink. The dice set is masterfully designed with balanced textures and matching ink style. Not only are the dice beautiful jewelry pieces, the dice are balanced, heavy, solid, and rolls/feels exceptional.",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -1533,7 +1560,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1589,7 +1617,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2022-11-08T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1630,7 +1659,7 @@
       "listing_id":200008,
       "listing_name":"Metal dragon dice set",
       "thumbnail_img":"img/metal_dice/black_hollow_dragon_metal.png",
-      "listing_description":"\uD83C\uDFB2 Elevate Your Gaming Experience with Our Exquisite Metal Aluminum Dice Set! Perfect for Birthday Gifts, Role-Playing Enthusiasts, and Dungeons & Dragons Adventures.\n",
+      "listing_description":"\uD83C\uDFB2 Elevate Your Gaming Experience with Our Exquisite Metal Aluminum Dice Set! Perfect for Birthday Gifts, Role-Playing Enthusiasts, and Dungeons & Dragons Adventures.</br>",
       "options":{
         "option_id":[1],
         "option_name":["7 dice set"],
@@ -1645,7 +1674,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.9,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1688,7 +1718,7 @@
       "listing_id":800000,
       "listing_name":"7 dice resin slab mold",
       "thumbnail_img":"img/dice_making/7_dice_slab_mold.png",
-      "listing_description":"- Perfect Silicone Mold for Custom Resin Dice -\n\n- Allow you to create a set of 7 sharp-edge dice for your favorite RPG game at one time;\n- Mold is made of Jewelry grade transparent platinum silicone.\n- Flexible but strong! Reusable mold, which can be used at least 10 times without quality loss;\n- Easy casting and removing ready dice;\n- The smooth surface and the perfect shape of each dice for your best gaming experience;",
+      "listing_description":"- Perfect Silicone Mold for Custom Resin Dice -</br></br>- Allow you to create a set of 7 sharp-edge dice for your favorite RPG game at one time;</br>- Mold is made of Jewelry grade transparent platinum silicone.</br>- Flexible but strong! Reusable mold, which can be used at least 10 times without quality loss;</br>- Easy casting and removing ready dice;</br>- The smooth surface and the perfect shape of each dice for your best gaming experience;",
       "options":{
         "option_id":[1],
         "option_name":["Single 7 dice mold"],
@@ -1703,7 +1733,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2022-01-30T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1744,7 +1775,7 @@
       "listing_id":800001,
       "listing_name":"D20 chonk dice resin slab mold",
       "thumbnail_img":"img/dice_making/d20_chonk_mold.png",
-      "listing_description":"Dice size, at its resting height:\nD20: 35 mm\nD20 Blank: 33 mm\n\nAll moulds are made using Smooth-On Dragon Skin 20 (not food safe), using commercial-free fonts and thereof yours to keep and sell freely.\n\nMax PSI in pressure pot - 40psi (moulds may warp at any higher of a psi)\n\nAs long as it is treated well, the mould can last 10-15 casts - you can increase this number using a mould release spray, but this will result in a satin finish and require more polishing.",
+      "listing_description":"Dice size, at its resting height:</br>D20: 35 mm</br>D20 Blank: 33 mm</br></br>All moulds are made using Smooth-On Dragon Skin 20 (not food safe), using commercial-free fonts and thereof yours to keep and sell freely.</br></br>Max PSI in pressure pot - 40psi (moulds may warp at any higher of a psi)</br></br>As long as it is treated well, the mould can last 10-15 casts - you can increase this number using a mould release spray, but this will result in a satin finish and require more polishing.",
       "options":{
         "option_id":[1],
         "option_name":["Single d20 chonk dice mold"],
@@ -1759,7 +1790,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-04-30T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1800,7 +1832,7 @@
       "listing_id":800002,
       "listing_name":"1.46kg epoxy resin+hardener set",
       "thumbnail_img":"img/dice_making/1_45kg_epoxy_hardener_resin.png",
-      "listing_description":"PureCast Fast Cure is a water clear epoxy for small castings and coatings up to 10mm thick. Popular for table tops, artwork coating and much more. This solvent free epoxy is very low odour and a simple 2 to 1 mixing ratio (by volume).\n\nPureCast is often used completely clear, it is also compatible with our complete range of translucent pigments, solid-colour pigments, luminous and metallic-effect powders. Many other colours and powders can be added too, but be sure to conduct a test to ensure compatibility.",
+      "listing_description":"PureCast Fast Cure is a water clear epoxy for small castings and coatings up to 10mm thick. Popular for table tops, artwork coating and much more. This solvent free epoxy is very low odour and a simple 2 to 1 mixing ratio (by volume).</br></br>PureCast is often used completely clear, it is also compatible with our complete range of translucent pigments, solid-colour pigments, luminous and metallic-effect powders. Many other colours and powders can be added too, but be sure to conduct a test to ensure compatibility.",
       "options":{
         "option_id":[1],
         "option_name":["1.45kg bottle(s)"],
@@ -1815,7 +1847,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2024-04-30T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1871,7 +1904,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2021-03-20T00:00:00+00:00",
+      "footprint":0.2,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1912,11 +1946,11 @@
       "listing_id":800004,
       "listing_name":"26 colour alcohol ink",
       "thumbnail_img":"img/dice_making/26_color_alcohol_ink.png",
-      "listing_description":"LET'S RESIN SUPER CONCENTRATION ALCOHOL INK: our pigment ink features super concentrated and vibrant colors, utilizing a high concentration formula to ensure great depth and vibrance color; much higher saturated and concentrated than those cheap brands( claimed their inks high concentration). Our alcohol ink is truly highly pigmented, a little can go a long long way, mixing with the blending solution can get lighter colors.\nLET'S RESIN RAINBOW ALCOHOL INK SET: A wonderful selection of 26 highly-saturated alcohol-based transparent ink with vibrant colors, including Black, Brown, Coffee, Sapphire Blue, Sky Blue, Green, Purple, Purplish Red, Red, Peach Red, Orange, Yellow, Lemon Yellow, Turquoise, Dark Magenta, Cerulean, Magenta, Sugilite, Azure Blue, Midnight Blue, Dark Indigo, YellowGreen, Forest Green, Emerald Green, White(normal), White(deep). Each bottle contains 10ml/0.35 oz ink dye,26 bottles in total.\nVERSATILE ALCOHOL RESIN INK: Ideal alcohol ink for various resin art coloring, resin petri dish, resin tumbler cup making, epoxy resin coloring, resin painting art, resin jewelry, creating a striking, amazing effect on resin; as well as on a variety of non-porous surface including waterproof paper, glass, metal, ceramic, plastic, cardstock, canvas, rock painting.\nDILUBLE & BLENDABLE: LET'S RESIN vibrant alcohol colored ink are crafted using on their own or blended together for rich color effects; mixing with the blending solution can help increase more transparency on non-porous surfaces and help the alcohol paint adhere to the surface.",
+      "listing_description":"LET'S RESIN SUPER CONCENTRATION ALCOHOL INK: our pigment ink features super concentrated and vibrant colors, utilizing a high concentration formula to ensure great depth and vibrance color; much higher saturated and concentrated than those cheap brands( claimed their inks high concentration). Our alcohol ink is truly highly pigmented, a little can go a long long way, mixing with the blending solution can get lighter colors.</br>LET'S RESIN RAINBOW ALCOHOL INK SET: A wonderful selection of 26 highly-saturated alcohol-based transparent ink with vibrant colors, including Black, Brown, Coffee, Sapphire Blue, Sky Blue, Green, Purple, Purplish Red, Red, Peach Red, Orange, Yellow, Lemon Yellow, Turquoise, Dark Magenta, Cerulean, Magenta, Sugilite, Azure Blue, Midnight Blue, Dark Indigo, YellowGreen, Forest Green, Emerald Green, White(normal), White(deep). Each bottle contains 10ml/0.35 oz ink dye,26 bottles in total.</br>VERSATILE ALCOHOL RESIN INK: Ideal alcohol ink for various resin art coloring, resin petri dish, resin tumbler cup making, epoxy resin coloring, resin painting art, resin jewelry, creating a striking, amazing effect on resin; as well as on a variety of non-porous surface including waterproof paper, glass, metal, ceramic, plastic, cardstock, canvas, rock painting.</br>DILUBLE & BLENDABLE: LET'S RESIN vibrant alcohol colored ink are crafted using on their own or blended together for rich color effects; mixing with the blending solution can help increase more transparency on non-porous surfaces and help the alcohol paint adhere to the surface.",
       "options":{
         "option_id":[1],
-        "option_name":["Single d20 chonk dice mold"],
-        "option_img":["img/dice_making/d20_chonk_mold.png"],
+        "option_name":["26 colour alcohol ink"],
+        "option_img":["img/dice_making/26_color_alcohol_ink.png"],
         "option_price":[20],
         "option_stock":[30],
         "option_sold":[0],
@@ -1927,7 +1961,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-10T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -1968,11 +2003,11 @@
       "listing_id":800005,
       "listing_name":"16 colour resin pigment",
       "thumbnail_img":"img/dice_making/16_color_resin_pigment.png",
-      "listing_description":"GREAT VARIETY OF COLORS: LET'S RESIN 16 bottles of vibrant resin pigment with the sealed bottled package, each bottle contains 10ml epoxy pigment, and offers you great color options, including Black, White, Caramel, Sky Blue, Sapphire Blue, Peacock Blue, Yellow, Lemon Yellow, Orange, Bright Red, Ruby Red, Peach Red, Light Green, Emerald Green, Blue Violet, Violet; All of resin pigment liquid is safely and securely packed in a gift box, no spills and leakage.\nTRANSLUCENT EPOXY RESIN DYE: A little can go a long way! Our resin dye contains more pigment than other cheap brands; just need a few drops of liquid resin dye and you will be surprised by the color effect. You can control the strength of the epoxy dye by slowly adding drops one at a time until you achieve your desired color. All the resin color pigments are translucent and have clear effects, except the white color. And you can also mix the white color to achieve opacity.\nSUITABLE FOR EPOXY RESIN COLORING: Our epoxy resin paint is odorless and fadeless, compatible with all epoxy resin brands; it works great for coloring resin art crafts, resin decorations, resin accessories, resin supplies, resin jewelry DIY making, and resin molds. They blend well together to create new resin epoxy color pigment and offer endless-possibility for your art project.\nEASY TO USE: Beginner friendly and experienced can enjoy LET'S RESIN resin dyes and pigments as well. You just need to gently squeeze the resin tints out of the bottle. The specially designed nozzle and the soft bottles can help you control the amount easily. NOTE: Before use, please cut the tip off with scissors.\nIMPORTANT NOTE: It's normal that there's a precipitation phenomenon of the pigment due to the long-standstill time. Just shake it evenly before use.",
+      "listing_description":"GREAT VARIETY OF COLORS: LET'S RESIN 16 bottles of vibrant resin pigment with the sealed bottled package, each bottle contains 10ml epoxy pigment, and offers you great color options, including Black, White, Caramel, Sky Blue, Sapphire Blue, Peacock Blue, Yellow, Lemon Yellow, Orange, Bright Red, Ruby Red, Peach Red, Light Green, Emerald Green, Blue Violet, Violet; All of resin pigment liquid is safely and securely packed in a gift box, no spills and leakage.</br>TRANSLUCENT EPOXY RESIN DYE: A little can go a long way! Our resin dye contains more pigment than other cheap brands; just need a few drops of liquid resin dye and you will be surprised by the color effect. You can control the strength of the epoxy dye by slowly adding drops one at a time until you achieve your desired color. All the resin color pigments are translucent and have clear effects, except the white color. And you can also mix the white color to achieve opacity.</br>SUITABLE FOR EPOXY RESIN COLORING: Our epoxy resin paint is odorless and fadeless, compatible with all epoxy resin brands; it works great for coloring resin art crafts, resin decorations, resin accessories, resin supplies, resin jewelry DIY making, and resin molds. They blend well together to create new resin epoxy color pigment and offer endless-possibility for your art project.</br>EASY TO USE: Beginner friendly and experienced can enjoy LET'S RESIN resin dyes and pigments as well. You just need to gently squeeze the resin tints out of the bottle. The specially designed nozzle and the soft bottles can help you control the amount easily. NOTE: Before use, please cut the tip off with scissors.</br>IMPORTANT NOTE: It's normal that there's a precipitation phenomenon of the pigment due to the long-standstill time. Just shake it evenly before use.",
       "options":{
         "option_id":[1],
-        "option_name":["Single d20 chonk dice mold"],
-        "option_img":["img/dice_making/d20_chonk_mold.png"],
+        "option_name":["16 colour resin pigment"],
+        "option_img":["img/dice_making/16_color_resin_pigment.png"],
         "option_price":[20],
         "option_stock":[30],
         "option_sold":[0],
@@ -1983,7 +2018,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2024-11-10T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2024,11 +2060,11 @@
       "listing_id":800006,
       "listing_name":"24 colour mica powder",
       "thumbnail_img":"img/dice_making/24_color_mica_powder.png",
-      "listing_description":"MORE PIGMENT POWDER: Super Large Set of 24 vibrant Colors, 10g (0.35oz) each bottle,Total weight is 240(8.4oz), our artisan made colors use stronger more vibrant pigment to give you the color you need with less mica,a little bit goes a long way, let your creative desire no longer be limited.\nMULTI-PURPOSE MICA POWDER: This is a really excellent accessory for a variety of crafts, including making Epoxy Resin color, Bath Bombs,DIY soap making (soap dyes), Candle Making, LIP Gloss and lipstick make-up, blush, body butter and more.\nPREMIUM QUALITY MICA POWDER: Our epoxy resin pigment powder have ultrafine particle sizes of 10-40μmfinely is smooth and blends very easily, These powders can add a terrific texture for your pieces, whether it's resin or soap, and give them a greater depth.",
+      "listing_description":"MORE PIGMENT POWDER: Super Large Set of 24 vibrant Colors, 10g (0.35oz) each bottle,Total weight is 240(8.4oz), our artisan made colors use stronger more vibrant pigment to give you the color you need with less mica,a little bit goes a long way, let your creative desire no longer be limited.</br>MULTI-PURPOSE MICA POWDER: This is a really excellent accessory for a variety of crafts, including making Epoxy Resin color, Bath Bombs,DIY soap making (soap dyes), Candle Making, LIP Gloss and lipstick make-up, blush, body butter and more.</br>PREMIUM QUALITY MICA POWDER: Our epoxy resin pigment powder have ultrafine particle sizes of 10-40μmfinely is smooth and blends very easily, These powders can add a terrific texture for your pieces, whether it's resin or soap, and give them a greater depth.",
       "options":{
         "option_id":[1],
-        "option_name":["Single d20 chonk dice mold"],
-        "option_img":["img/dice_making/d20_chonk_mold.png"],
+        "option_name":["24 colour mica powder"],
+        "option_img":["img/dice_making/24_color_mica_powder.png"],
         "option_price":[20],
         "option_stock":[30],
         "option_sold":[0],
@@ -2039,7 +2075,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2022-01-24T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2082,7 +2119,7 @@
       "listing_id":900000,
       "listing_name":"14k gold D6 earrings",
       "thumbnail_img":"img/dice_accessories/14k_gold_d6_earrings.png",
-      "listing_description":"Take A Gamble With These Cute 14k Solid Yellow Gold Multi Cz Dice Screw Back Earrings. Its A\n\nPerfect Addition To Your Jewelry Collection.\n\nMaterial 14K Yellow Gold\n\nLength: Post is 7.mm Long\n\nDimensions: 6mm\n\nStone :Clear Cubic Zirconia\n\nDesign: Square Dice\n\nBacking: Screw on Back",
+      "listing_description":"Take A Gamble With These Cute 14k Solid Yellow Gold Multi Cz Dice Screw Back Earrings. Its A</br></br>Perfect Addition To Your Jewelry Collection.</br></br>Material 14K Yellow Gold</br></br>Length: Post is 7.mm Long</br></br>Dimensions: 6mm</br></br>Stone :Clear Cubic Zirconia</br></br>Design: Square Dice</br></br>Backing: Screw on Back",
       "options":{
         "option_id":[1],
         "option_name":["Single pair of earrings"],
@@ -2097,7 +2134,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2019-02-14T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2153,7 +2191,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2209,7 +2248,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":1.8,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2265,7 +2305,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2022-07-17T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2306,7 +2347,7 @@
       "listing_id":900004,
       "listing_name":"Amethyst dice set earrings",
       "thumbnail_img":"img/dice_accessories/amethyst_dice_set_earrings.png",
-      "listing_description":"Have you ever wanted to wear an entire set of dice ON EACH EAR? We encourage you to indulge your fantasies with these super cute, eye-catching, and utterly awesome miniature dice earrings.\n\nThe earrings are about 3-1/2 inches overall and have seven tiny (10mm) half-size dice hanging from individual chains. The earrings are surprisingly lightweight, about a quarter ounce each (7 grams, or the weight of a ketchup packet). You receive D4, D6, D8, D10, D10%, D12, and D20, which fall in a cascade from each earring. They are available in several colors... check the listing for what is in stock now.\n\nSwingy, light, and fun to wear, these earrings will be an eye-catching accessory for any gamer. Be the envy of your party when you show up for your next campaign in these quirky earrings.\n\nI use actual dice, drilling holes and inserting screw eyes, linking the dice with jump rings, and attaching earring findings to make these unusual and fun creations. Metals are lead and nickel free.",
+      "listing_description":"Have you ever wanted to wear an entire set of dice ON EACH EAR? We encourage you to indulge your fantasies with these super cute, eye-catching, and utterly awesome miniature dice earrings.</br></br>The earrings are about 3-1/2 inches overall and have seven tiny (10mm) half-size dice hanging from individual chains. The earrings are surprisingly lightweight, about a quarter ounce each (7 grams, or the weight of a ketchup packet). You receive D4, D6, D8, D10, D10%, D12, and D20, which fall in a cascade from each earring. They are available in several colors... check the listing for what is in stock now.</br></br>Swingy, light, and fun to wear, these earrings will be an eye-catching accessory for any gamer. Be the envy of your party when you show up for your next campaign in these quirky earrings.</br></br>I use actual dice, drilling holes and inserting screw eyes, linking the dice with jump rings, and attaching earring findings to make these unusual and fun creations. Metals are lead and nickel free.",
       "options":{
         "option_id":[1],
         "option_name":["Single pair of earrings"],
@@ -2321,7 +2362,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2377,7 +2419,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.2,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2418,7 +2461,7 @@
       "listing_id":900006,
       "listing_name":"14k gold double D4 necklace",
       "thumbnail_img":"img/dice_accessories/14k_gold_double_necklace.png",
-      "listing_description":"14K Solid Gold 3D Dice Charm Pendant, 14K Gold Lucky Charm Pendant, Gold Die Pendant, 14K Solid Gold Dice Necklace, Gold Dice Charm Pendant. Dice Pendant, Dice Necklace, Great gift for everyone. Can be worn with other necklaces, great for layers. Christmas Gift, Christmas gift for her, Christmas gift for him, good luck jewelry, good luck necklace, Christmas gift for sister, Christmas gift for brother. dainty necklace.\n.\n.\n.\n• Chain: Sold Separately\n• Chain: 2mm Cuban Chain is Optional\n• Stamp: Real 14k Gold\n• Never gold filled or plated\n• Packaged With Free Gift Box\n• A perfect gift for everyone.",
+      "listing_description":"14K Solid Gold 3D Dice Charm Pendant, 14K Gold Lucky Charm Pendant, Gold Die Pendant, 14K Solid Gold Dice Necklace, Gold Dice Charm Pendant. Dice Pendant, Dice Necklace, Great gift for everyone. Can be worn with other necklaces, great for layers. Christmas Gift, Christmas gift for her, Christmas gift for him, good luck jewelry, good luck necklace, Christmas gift for sister, Christmas gift for brother. dainty necklace.</br>.</br>.</br>.</br>• Chain: Sold Separately</br>• Chain: 2mm Cuban Chain is Optional</br>• Stamp: Real 14k Gold</br>• Never gold filled or plated</br>• Packaged With Free Gift Box</br>• A perfect gift for everyone.",
       "options":{
         "option_id":[1],
         "option_name":["Necklace pendant and chain"],
@@ -2433,7 +2476,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2474,7 +2518,7 @@
       "listing_id":900007,
       "listing_name":"D20 resin dice metal cage necklace",
       "thumbnail_img":"img/dice_accessories/d20_dice_cage_necklace.png",
-      "listing_description":"This dice necklace is made of 18K gold plated. Ideal for matching with translucent resin dice or gemstone dice with shine.\n\nLength: 60cm (approximately to the chest position after wearing)",
+      "listing_description":"This dice necklace is made of 18K gold plated. Ideal for matching with translucent resin dice or gemstone dice with shine.</br></br>Length: 60cm (approximately to the chest position after wearing)",
       "options":{
         "option_id":[1],
         "option_name":["Necklace pendant and chain"],
@@ -2489,7 +2533,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2530,7 +2575,7 @@
       "listing_id":900008,
       "listing_name":"Dragon guardian D20 necklace",
       "thumbnail_img":"img/dice_accessories/dragon_d20_necklace.png",
-      "listing_description":"Keep your favourite D20 dice safe and sound in one of our Guardian Dragon pendants!\n\nOur Guardian Dragon will carefully cradle your D20 dice in its scaly embrace, allowing you to proudly display your love of tabletop RPGs while keeping your dice within reach. Plus, when you're ready to roll, simply remove the dice and you're good to go!But here's the best part - you can actually use the dice! Whether you're gaming on the go or just want to match your dice to your outfit, our pendants make it easy to switch out your dice as often as you like. Just be aware that due to continuous wear and repeated use, the metal may be slightly misshaped over time and some force may be required to reseal the pendant.",
+      "listing_description":"Keep your favourite D20 dice safe and sound in one of our Guardian Dragon pendants!</br></br>Our Guardian Dragon will carefully cradle your D20 dice in its scaly embrace, allowing you to proudly display your love of tabletop RPGs while keeping your dice within reach. Plus, when you're ready to roll, simply remove the dice and you're good to go!But here's the best part - you can actually use the dice! Whether you're gaming on the go or just want to match your dice to your outfit, our pendants make it easy to switch out your dice as often as you like. Just be aware that due to continuous wear and repeated use, the metal may be slightly misshaped over time and some force may be required to reseal the pendant.",
       "options":{
         "option_id":[1],
         "option_name":["Necklace pendant and chain"],
@@ -2545,7 +2590,8 @@
       "num_of_reviews":0,
       "sold":40,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2601,7 +2647,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.1,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2642,7 +2689,7 @@
       "listing_id":900010,
       "listing_name":"Silver D6+charm necklace",
       "thumbnail_img":"img/dice_accessories/silver_d6_charm_necklace.png",
-      "listing_description":"♥ Stainless steel chain\n♥ Stainless steel disc 10mm.\n♥ Alloy charm lead and nickel safe approx: 12.5x6mm.",
+      "listing_description":"♥ Stainless steel chain</br>♥ Stainless steel disc 10mm.</br>♥ Alloy charm lead and nickel safe approx: 12.5x6mm.",
       "options":{
         "option_id":[1],
         "option_name":["Necklace pendant and chain"],
@@ -2657,7 +2704,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2698,7 +2746,7 @@
       "listing_id":900011,
       "listing_name":"Twin D6 silver necklace",
       "thumbnail_img":"img/dice_accessories/twin_d6_necklace.png",
-      "listing_description":"This is a Sterling Silver Oxidized Dice Charm Necklace. Both the charm and the necklace are Sterling Silver.\n\nPlease look at the measurements of the charms before ordering. Photos can sometimes make charms appear larger or smaller than they actually are.\n\nMeasurement of Charm in mm: Height: 14 Width: 5",
+      "listing_description":"This is a Sterling Silver Oxidized Dice Charm Necklace. Both the charm and the necklace are Sterling Silver.</br></br>Please look at the measurements of the charms before ordering. Photos can sometimes make charms appear larger or smaller than they actually are.</br></br>Measurement of Charm in mm: Height: 14 Width: 5",
       "options":{
         "option_id":[1],
         "option_name":["Necklace pendant and chain"],
@@ -2713,7 +2761,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2754,7 +2803,7 @@
       "listing_id":900012,
       "listing_name":"18k gold D20 ring",
       "thumbnail_img":"img/dice_accessories/18k_gold_d20_ring.png",
-      "listing_description":"It will be the highlight of your everyday outfit and a way to show others your passion for role-playing games and your personality. Whether as a reward for yourself or as a gift to someone else, this ring will become a precious item that accompanies you on your journey to explore the fantasy world together.\n\n",
+      "listing_description":"It will be the highlight of your everyday outfit and a way to show others your passion for role-playing games and your personality. Whether as a reward for yourself or as a gift to someone else, this ring will become a precious item that accompanies you on your journey to explore the fantasy world together.</br></br>",
       "options":{
         "option_id":[1],
         "option_name":["Single ring"],
@@ -2769,7 +2818,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2810,7 +2860,7 @@
       "listing_id":900013,
       "listing_name":"Duo D6 brass ring",
       "thumbnail_img":"img/dice_accessories/duo_d6_brass_ring.png",
-      "listing_description":"All our rings are made by hand from raw minerals, they are made specifically for our shop. They come all the way from Mexico and are solid Brass. All rings are hand pounded into the ring shape and hand filed to create unique rings and therefore there will always be slight differences in measurements. \nApproximate Measurements:\nFace: 10mm X 17mm (before carving)\n\nNote: Please keep in mind that brass does tend to tarnish and should be cleaned regularly. Also keep in mind the more letter you want the thinner they'll be.",
+      "listing_description":"All our rings are made by hand from raw minerals, they are made specifically for our shop. They come all the way from Mexico and are solid Brass. All rings are hand pounded into the ring shape and hand filed to create unique rings and therefore there will always be slight differences in measurements. </br>Approximate Measurements:</br>Face: 10mm X 17mm (before carving)</br></br>Note: Please keep in mind that brass does tend to tarnish and should be cleaned regularly. Also keep in mind the more letter you want the thinner they'll be.",
       "options":{
         "option_id":[1],
         "option_name":["Single ring"],
@@ -2825,7 +2875,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.8,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2881,7 +2932,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2922,7 +2974,7 @@
       "listing_id":900015,
       "listing_name":"Dragon dice box ring",
       "thumbnail_img":"img/dice_accessories/dragon_ring_box.png",
-      "listing_description":"• High quality materials and attention to detail\n\n• It's unique and can be worn every day\n\n• A special gift for you and your loved ones\n\nStyle: D20 Ring + Mini Dice\nSize: 13*17.5*32MM(0.5*0.7*1.3INCH) Weight: Mini dice: 4.5g Ring: 8.5g\nMaterial: Brass/Sterling Silver❤High-Quality Materials: Chosen for its strength and beauty, high-quality sterling silver has a lifetime of durability, anti-tarnish properties (won’t turn blue or green, won’t stain skin), and also a hypoallergenic material.\n\n❤A dragon grovel in rock up and protect your dice. Bring luck to every throw you make. The ring is also a dice box that can holds a set of mini dice with diameter of 6 mm.",
+      "listing_description":"• High quality materials and attention to detail</br></br>• It's unique and can be worn every day</br></br>• A special gift for you and your loved ones</br></br>Style: D20 Ring + Mini Dice</br>Size: 13*17.5*32MM(0.5*0.7*1.3INCH) Weight: Mini dice: 4.5g Ring: 8.5g</br>Material: Brass/Sterling Silver❤High-Quality Materials: Chosen for its strength and beauty, high-quality sterling silver has a lifetime of durability, anti-tarnish properties (won’t turn blue or green, won’t stain skin), and also a hypoallergenic material.</br></br>❤A dragon grovel in rock up and protect your dice. Bring luck to every throw you make. The ring is also a dice box that can holds a set of mini dice with diameter of 6 mm.",
       "options":{
         "option_id":[1],
         "option_name":["Single ring"],
@@ -2937,7 +2989,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.4,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -2978,7 +3031,7 @@
       "listing_id":900016,
       "listing_name":"Dice vault tray+box",
       "thumbnail_img":"img/dice_accessories/dice_vault_tray_box.png",
-      "listing_description":"DnD Vault, Old Wood DnD Dice Case, Custom Dice Box Storage, Dice rolling Tray, Dungeons and Dragons, DnD Tray Vault D&D Gift DnD Box Storage\n\uD83C\uDFB2 Function\n▫\uFE0F Class up your game nights with these elegant DND vault.\n\n▫\uFE0F This vault is expertly handmade. It's great for role playing games or any other games that utilizes rolling dice. The dice holder has a brass clasp lock to keep your dice in place from fleeing between campaign runs or falling out in mid travel between one place and the next.\nPlease note that just as no two trees look the same, no two dice trays will either. Please allow for minor variations in color, contrast, and grain pattern. Each dice tray is unique and made by hand.\n▫\uFE0F The felt is free",
+      "listing_description":"DnD Vault, Old Wood DnD Dice Case, Custom Dice Box Storage, Dice rolling Tray, Dungeons and Dragons, DnD Tray Vault D&D Gift DnD Box Storage</br>\uD83C\uDFB2 Function</br>▫\uFE0F Class up your game nights with these elegant DND vault.</br></br>▫\uFE0F This vault is expertly handmade. It's great for role playing games or any other games that utilizes rolling dice. The dice holder has a brass clasp lock to keep your dice in place from fleeing between campaign runs or falling out in mid travel between one place and the next.</br>Please note that just as no two trees look the same, no two dice trays will either. Please allow for minor variations in color, contrast, and grain pattern. Each dice tray is unique and made by hand.</br>▫\uFE0F The felt is free",
       "options":{
         "option_id":[1],
         "option_name":["Dragon pattern box"],
@@ -2993,7 +3046,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2023-12-31T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -3034,7 +3088,7 @@
       "listing_id":900017,
       "listing_name":"7 set storage dice box",
       "thumbnail_img":"img/dice_accessories/7_set_box.png",
-      "listing_description":"Introducing our Personalized Dice Box and Holder Set – a delightful combination of functionality and personalization that caters to your unique gaming style. This elegant accessory is designed to keep your dice collection secure while adding a touch of individuality to your gaming experiences.\n\nFeatures:\n\nThoughtfully designed dice box and holder set capable of holding 7 dice.Crafted with attention to detail, ensuring durability and longevity for countless gaming sessions.\nCompact and convenient design that easily fits into your bag, making it perfect for on-the-go gaming.\nInterior compartments are perfectly sized to keep dice organized and ready for action.\nExpress your style while keeping your dice safe – a great conversation starter among fellow gamers.\nThe box has an outer size of 17,5 * 17.5 * 4 cm\n\nInterior lining - colored felt.\n\nPlease note - we are styling our products as vintage after restoration). Thus, you may see some color differences, abrasions, artificial scratches, saw marks. We try to keep this in balance. Therefore, it does not spoil the product.\n\nEach piece is handmade. This makes it unique.",
+      "listing_description":"Introducing our Personalized Dice Box and Holder Set – a delightful combination of functionality and personalization that caters to your unique gaming style. This elegant accessory is designed to keep your dice collection secure while adding a touch of individuality to your gaming experiences.</br></br>Features:</br></br>Thoughtfully designed dice box and holder set capable of holding 7 dice.Crafted with attention to detail, ensuring durability and longevity for countless gaming sessions.</br>Compact and convenient design that easily fits into your bag, making it perfect for on-the-go gaming.</br>Interior compartments are perfectly sized to keep dice organized and ready for action.</br>Express your style while keeping your dice safe – a great conversation starter among fellow gamers.</br>The box has an outer size of 17,5 * 17.5 * 4 cm</br></br>Interior lining - colored felt.</br></br>Please note - we are styling our products as vintage after restoration). Thus, you may see some color differences, abrasions, artificial scratches, saw marks. We try to keep this in balance. Therefore, it does not spoil the product.</br></br>Each piece is handmade. This makes it unique.",
       "options":{
         "option_id":[1],
         "option_name":["Single wood box"],
@@ -3049,7 +3103,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -3090,7 +3145,7 @@
       "listing_id":900018,
       "listing_name":"DnD book box+tray",
       "thumbnail_img":"img/dice_accessories/book_box_tray.png",
-      "listing_description":"Book effect dice and player storage box / roll tray - Choice of designs and colours.\n\nOur unique book affect solid wood box and roll trays are perfect for dice and equipment storage. Ideal for pens, notes, tokens, dice, player cards, spell cards...the list is endless.\n\nEach box is engraved using our precision laser engraver and then stained with your choice of colour; making your box as unique to you as possible. Each box is then felt lined to add an extra touch of quality. It also makes it perfect for use a dice rolling tray; keeping your dice on the table and the noise down. Finished with antique style decorative corners, these boxes make perfect addition to your tabletop set up.\nSize (outside dimensions) - 20 x 28 x 7cm",
+      "listing_description":"Book effect dice and player storage box / roll tray - Choice of designs and colours.</br></br>Our unique book affect solid wood box and roll trays are perfect for dice and equipment storage. Ideal for pens, notes, tokens, dice, player cards, spell cards...the list is endless.</br></br>Each box is engraved using our precision laser engraver and then stained with your choice of colour; making your box as unique to you as possible. Each box is then felt lined to add an extra touch of quality. It also makes it perfect for use a dice rolling tray; keeping your dice on the table and the noise down. Finished with antique style decorative corners, these boxes make perfect addition to your tabletop set up.</br>Size (outside dimensions) - 20 x 28 x 7cm",
       "options":{
         "option_id":[1],
         "option_name":["Single book tray"],
@@ -3105,7 +3160,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-01-01T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -3146,7 +3202,7 @@
       "listing_id":900019,
       "listing_name":"Wood dice box single set storage",
       "thumbnail_img":"img/dice_accessories/wood_dice_box.png",
-      "listing_description":"Material: Padauk Wood\n\nSize: 11 cm x 8.5 cm x 4 cm\n\nThis listing is just for 1 box, it doesn't include the dice.",
+      "listing_description":"Material: Padauk Wood</br></br>Size: 11 cm x 8.5 cm x 4 cm</br></br>This listing is just for 1 box, it doesn't include the dice.",
       "options":{
         "option_id":[1],
         "option_name":["Single wood box"],
@@ -3161,7 +3217,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2020-10-13T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
@@ -3217,7 +3274,8 @@
       "num_of_reviews":0,
       "sold":0,
       "in_stock":true,
-      "footprint":0,
+      "date_added": "2022-04-27T00:00:00+00:00",
+      "footprint":0.5,
       "reviews":{
         "review_id":[],
         "review_user_id":[],
