@@ -9,17 +9,22 @@
 </head>
 <body>
     {% block content %}
-        <div class="container-fluid">
+        <div class="container text-center">
             <h2>{{ category_name }}</h2>
+        </div>
+        <div class="container">
             <ul>
                 {% for item in category_items %}
-                    {% if item.in_stock %}
-                        <li><a href="{{ url_for('loadItem', item_id=item.listing_id) }}">{{ item.listing_name }}</a></li>
+                    <div class="item_listing">
                         <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
                              class="img-thumbnail img-responsive"
                              alt="{{ item.listing_name }}">
-                        <li>{{ 'Price : ' ~ item.avg_price }}</li>
-                    {% endif %}
+                        <a href="{{ url_for('loadItem', item_id=item.listing_id) }}">
+                            {{ item.listing_name }}
+                        </a>
+                        {{ 'Price : £' ~ item.avg_price }}
+                        {{ 'Environmental footprint : ' ~ item.footprint }}
+                    </div>
                 {% endfor %}
             </ul>
         </div>
