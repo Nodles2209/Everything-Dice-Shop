@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_wtf import CSRFProtect
+
 from instance.db.sqlalchemyDB import db
 from src.app import getSQLPath, getConfig
 
