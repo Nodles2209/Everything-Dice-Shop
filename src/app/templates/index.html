@@ -16,23 +16,15 @@
                 </div>
                 {% for item in portion[1] %}
                     <div class="item_listing">
-                    <ul>
                         <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
                              class="img-thumbnail img-responsive"
                              alt="{{ item.listing_name }}">
-                        <li>
-                            <a href="{{ url_for('loadItem', item_id=item.listing_id) }}">
-                                {{ item.listing_name }}
-                            </a>
-                        </li>
-                        <li>
-                            {{ 'Price : £' ~ item.avg_price }}
-                        </li>
-                        <li>
-                            {{ 'Environmental footprint : ' ~ item.footprint ~ 'kg emissions'}}
-                        </li>
-                    </ul>
-                </div>
+                        <a href="{{ url_for('loadItem', item_id=item.listing_id) }}">
+                            {{ item.listing_name }}
+                        </a>
+                        <p>{{ 'Price : £' ~ item.avg_price }}</p>
+                        <p>{{ 'Environmental footprint : ' ~ item.footprint ~ 'kg emissions'}}</p>
+                    </div>
                 {% endfor %}
             {% endfor %}
         </div>
