@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping Basket</title>
+</head>
+<body>
+    {% block content %}
+        <div class="container">
+            {% for item in basket %}
+                <div class="basket_item container">
+                    <img src="{{ url_for('static', filename=item.listing_img) }}"
+                                 class="img-thumbnail img-responsive"
+                                 alt="{{ item.listing_name }}">
+                    <a href="{{ url_for('loadItem', item_id=item.listing_id, option_default=(item.option_id, item.option_name)) }}">
+                        {{ item.listing_name }}
+                    </a>
+                    <p>{{ item.option_name }}</p>
+                    <p>{{ 'Quantity: ' ~ item.quantity }}</p>
+                    <p>{{ 'Price: £' ~ item.option_price * item.quantity}}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="total_price container">
+            {{ 'Total price: £' ~ total_price }}
+        </div>
+
+        <div class="option_form">
+            <form method="post">
+                {{ form.csrf_token }}
+                {{ wtf.quick_form(form) }}
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>
