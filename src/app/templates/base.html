@@ -35,6 +35,11 @@
                             </a>
                         </li>
                     {% endfor %}
+                    <li>
+                        <a class="col-lg-20" href="{{ url_for('loadCategory', category='All Items') }}">
+                            All Items
+                        </a>
+                    </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -47,18 +52,13 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <!--{% for account_settings in account %}-->
-                                <!--<li><a href="#"> {{ account_settings }} </a></li>-->
-                            <!--{% endfor %}-->
-                            <li>
-                                <a href="#">
-                                    Temp
-                                </a>
-                            </li>
+                            {% for setting in account_settings %}
+                                <li><a href="#"> {{ setting }} </a></li>
+                            {% endfor %}
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{url_for('basket')}}">
                             <span class="glyphicon glyphicon-shopping-cart"></span>
                             Basket
                         </a>
