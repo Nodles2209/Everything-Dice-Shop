@@ -10,17 +10,30 @@
 <body>
     {% block content %}
         <div class="container-fluid">
-            <h2>{{ item.listing_name }}</h2>
-            <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
+            <div class="listing_name container text-center">
+                <h2>{{ item.listing_name }}</h2>
+            </div>
+
+            <div class="listing_description container">
+                <p>{{ item.listing_description | safe}}</p>
+            </div>
+
+            <div class="main_img">
+                <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
                  class="img-responsive"
                  alt="{{ item.listing_name }}">
+            </div>
+
             {% if item.in_stock %}
                 {% for option in item_options %}
-                    <img src="{{ url_for('static', filename=option.option_img) }}"
+                    <div class="side_img">
+                        <img src="{{ url_for('static', filename=option.option_img) }}"
                          class="img-thumbnail img-responsive"
                          alt="{{ option.option_name }}">
+                    </div>
                 {% endfor %}
-                <div>
+
+                <div class="option_form">
                     <form method="post">
                         {{ form.csrf_token }}
                         {{ wtf.quick_form(form) }}
