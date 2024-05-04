@@ -1,6 +1,7 @@
-from instance.db.sqlalchemyDB import db
+from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import UserMixin, AnonymousUserMixin
+
+from instance.db.sqlalchemyDB import db
 
 
 class ItemClassification(db.Model):
@@ -39,6 +40,7 @@ class ItemListing(db.Model):
     num_of_reviews = db.Column(db.Integer, index=True)
     sold = db.Column(db.Integer, index=True)
     in_stock = db.Column(db.Boolean, index=True)
+    date_added = db.Column(db.DateTime, index=True)
 
 
 class ListingOptions(db.Model):
@@ -97,6 +99,14 @@ class ReviewReplies(db.Model):
     reply_text = db.Column(db.Text, index=True)
 
 
+class AccountSettings(db.Model):
+    __tablename__ = "account_settings"
+
+    setting_id = db.Column(db.Integer, primary_key=True)
+    setting_option = db.Column(db.String, index=True)
+    is_anon = db.Column(db.Boolean, index=True)
+
+
 class UserProfile(db.Model, UserMixin):
     __tablename__ = "user_profile"
 
@@ -137,8 +147,6 @@ class UserBasket(db.Model):
     user = db.relationship("UserProfile", back_populates="basket",
                            primaryjoin="UserBasket.basket_user_id == UserProfile.id")
 
-    session_id = db.Column(db.String, index=True)
-
 
 class BasketItem(db.Model):
     __tablename__ = "basket_item"
@@ -153,7 +161,7 @@ class BasketItem(db.Model):
     option = db.relationship("ListingOptions", back_populates="basket",
                              primaryjoin="BasketItem.for_item_id == ListingOptions.option_id")
 
-    num_of_items = db.Column(db.Integer, index=True)
+    quantity = db.Column(db.Integer, index=True)
 
 
 class CountryList(db.Model):
