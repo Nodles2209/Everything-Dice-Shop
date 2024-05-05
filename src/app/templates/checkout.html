@@ -7,3 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Checkout</title>
 </head>
+<body>
+    {% block content %}
+        <div class="final_basket container">
+            {% for item in final_basket %}
+                <div class="basket_item container">
+                    <img src="{{ url_for('static', filename=item.listing_img) }}"
+                                 class="img-thumbnail img-responsive"
+                                 alt="{{ item.listing_name }}">
+                    <p>{{ item.listing_name }}</p>
+                    <p>{{ item.option_name }}</p>
+                    <p>{{ 'Quantity: ' ~ item.quantity }}</p>
+                    <p>{{ 'Price: £' ~ item.option_price * item.quantity}}</p>
+                </div>
+            {% endfor %}
+
+            <div class="total_price container">
+                {{ 'Total price: £' ~ total_price }}
+            </div>
+        </div>
+
+        <div class="checkout_form">
+            <form method="post">
+                {{ form.csrf_token }}
+                {{ wtf.quick_form(form) }}
+            </form>
+        </div>
+    {% endblock %}
+</body>
+</html>
