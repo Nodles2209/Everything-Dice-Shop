@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html lang="english">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Invoices</title>
+</head>
+<body>
+    {% block content %}
+        <div class="container text-center">
+            <h3>Thank you for shopping with us!</h3>
+        </div>
+        <div class="container text-center">
+            <h4>Here is your invoice number: {{ invoice_number }}</h4>
+        </div>
+        <div class="container text-center">
+            <a href="{{ url_for('homePage') }}">Back to home page</a>
+        </div>
+    {% endblock %}
+</body>
+</html>
