@@ -1,7 +1,5 @@
 from flask import (Flask, render_template, redirect, url_for, request, session)
 from sqlalchemy import asc, desc
-import wtforms
-from flask_wtf import FlaskForm
 
 from create_app import InitApp
 from instance.db.initDB import dbCheck
@@ -112,7 +110,7 @@ def homePage():
         return error_text
 
 
-def getDatabaseQuery():
+def getDatabaseQuery(filter_by='all', order_by='asc', show_sold=False):
     # process query words and return relevant database query
     pass
 
@@ -130,7 +128,6 @@ def loadCategory(category):
                            category_name=category,
                            categories=getCategoryNames(),
                            account_settings=session['account_settings'])
-
 
 
 @app.route('/<int:item_id>', methods=['GET', 'POST'])
@@ -217,60 +214,51 @@ def getBasketDB(userID):
     return basket_items
 
 
-@app.route('/basket',  methods=['GET', 'POST'])
+def getBasketDisplay(isAnon, basketItems):
+    basket_display = []
+
+    for item in basketItems:
+        if isAnon:
+            option_id = item['option_id']
+            quantity = item['quantity']
+        else:
+            option_id = item.option_id
+            quantity = item.quantity
+
+        option_listing_id = ListingOptions.query \
+            .filter_by(option_id=option_id) \
+            .with_entities(ListingOptions.for_listing_id).first()
+
+        listing_info = ItemListing.query \
+            .filter_by(listing_id=option_listing_id.for_listing_id) \
+            .with_entities(ItemListing.listing_name,
+                           ItemListing.thumbnail_img).first()
+
+        option_info = ListingOptions.query \
+            .filter_by(option_id=option_id) \
+            .with_entities(ListingOptions.option_name,
+                           ListingOptions.option_price).first()
+
+        basket_display += [{'listing_id': option_listing_id[0],
+                            'listing_name': listing_info.listing_name,
+                            'listing_img': listing_info.thumbnail_img,
+                            'option_id': option_id,
+                            'option_name': option_info.option_name,
+                            'option_price': option_info.option_price,
+                            'quantity': quantity}]
+
+    return basket_display
+
+
+@app.route('/basket', methods=['GET', 'POST'])
 def basket():
     app.logger.info("Basket: " + str(session['basket']))
 
-    basket_display = []
-
     if session['isAnon']:
-        for item in session['basket']:
-            option_listing_id = ListingOptions.query \
-                .filter_by(option_id=item['option_id']) \
-                .with_entities(ListingOptions.for_listing_id).first()
-
-            listing_info = ItemListing.query \
-                .filter_by(listing_id=option_listing_id.for_listing_id) \
-                .with_entities(ItemListing.listing_name,
-                               ItemListing.thumbnail_img).first()
-
-            option_info = ListingOptions.query \
-                .filter_by(option_id=item['option_id']) \
-                .with_entities(ListingOptions.option_name,
-                               ListingOptions.option_price).first()
-
-            basket_display += [{'listing_id': option_listing_id[0],
-                                'listing_name': listing_info.listing_name,
-                                'listing_img': listing_info.thumbnail_img,
-                                'option_id': item['option_id'],
-                                'option_name': option_info.option_name,
-                                'option_price': option_info.option_price,
-                                'quantity': item['quantity']}]
+        basket_display = getBasketDisplay(session['isAnon'], session['basket'])
 
     else:
-        basket_items = getBasketDB(session['user_id'])
-        for item in basket_items:
-            option_listing_id = ListingOptions.query \
-                .filter_by(option_id=item.option_id) \
-                .with_entities(ListingOptions.for_listing_id).first()
-
-            listing_info = ItemListing.query \
-                .filter_by(listing_id=option_listing_id.for_listing_id) \
-                .with_entities(ItemListing.listing_name,
-                               ItemListing.thumbnail_img).first()
-
-            option_info = ListingOptions.query \
-                .filter_by(option_id=item.option_id) \
-                .with_entities(ListingOptions.option_name,
-                               ListingOptions.option_price).first()
-
-            basket_display += [{'listing_id': option_listing_id[0],
-                                'listing_name': listing_info.listing_name,
-                                'listing_img': listing_info.thumbnail_img,
-                                'option_id': item.option_id,
-                                'option_name': option_info.option_name,
-                                'option_price': option_info.option_price,
-                                'quantity': item.quantity}]
+        basket_display = getBasketDisplay(session['isAnon'], getBasketDB(session['user_id']))
 
     app.logger.info("Basket Display: " + str(basket_display))
 
@@ -287,7 +275,7 @@ def basket():
         return redirect(url_for('basket'))
 
     if form.validate_on_submit():
-        return redirect(url_for('checkOut'))
+        return redirect(url_for('checkOut', final_basket=basket_display))
     else:
         return render_template('basket.html',
                                basket=basket_display,
@@ -297,9 +285,94 @@ def basket():
                                account_settings=session['account_settings'])
 
 
-@app.route('/checkout')
+def getUserPaymentMethods():
+    payment_methods = []
+
+    user_payment_methods = UserBillingInfo.query \
+        .filter_by(id=session['user_id']) \
+        .with_entities(UserBillingInfo.payment_method).all()
+
+    all_user_payment_methods = []
+
+    for payment_method in user_payment_methods:
+        all_user_payment_methods += [PaymentMethod.query
+                                     .filter_by(details_id=payment_method.payment_method).all()]
+
+    payment_display = []
+
+    for payment_method in all_user_payment_methods:
+        if payment_method[0].payment_type == "card":
+            payment_display += [f"Card ending in {int(str(payment_method[0].card_num)[-4:])}"]
+        elif payment_method[0].payment_type == "online":
+            if payment_method[0].paypal_email:
+                payment_display += [f"{payment_method[0].merchant_name} account {payment_method[0].email}"]
+            else:
+                payment_display += [f"{payment_method[0].merchant_name} account {payment_method[0].username}"]
+
+    for i in range(len(payment_display)):
+        payment_methods += [(all_user_payment_methods[i], payment_display[i])]
+
+    return payment_methods
+
+
+@app.route('/checkout/', methods=['GET', 'POST'])
 def checkOut():
+    if not session['isAnon']:
+        session['basket'] = getBasketDB(session['user_id'])
+    final_basket = getBasketDisplay(session['isAnon'], session['basket'])
+
+    total_price = sum([item['option_price'] for item in final_basket])
+    app.logger.info("Final basket: " + str(final_basket))
+
+    country_choices = CountryList.query.all()
+    country_names = [(country.country_id, country.country_name) for country in country_choices]
+
+    display_area_codes = [(country.area_code, f"{country.country_name} +{country.area_code}") for country in
+                          country_choices]
+
+    checkout_form = CheckoutForm()
+    checkout_form.country.choices = country_names
+    checkout_form.phone_area_code.choices = display_area_codes
+    checkout_form.country.default = (1, "United Kingdom")
+    checkout_form.phone_area_code.default = (44, "United Kingdom +44")
+
+    payment_methods = [(0, "Add new payment method")]
+
+    if not session['isAnon']:
+        payment_methods += getUserPaymentMethods()
+
+    checkout_form.payment_method.choices = payment_methods
+
+    if checkout_form.validate_on_submit():
+        return redirect(url_for('invoice'))
+
     return render_template('checkout.html',
+                           final_basket=final_basket,
+                           total_price=total_price,
+                           form=checkout_form,
+                           categories=getCategoryNames(),
+                           account_settings=session['account_settings'])
+
+
+@app.route('/checkout/invoice')
+def invoice():
+
+    if 'invoice' not in session:
+        if not session['isAnon']:
+            create_invoice = Invoices(session['user_id'])
+            clearBasketDB(session['user_id'])
+        else:
+            create_invoice = Invoices()
+            session['basket'] = []
+        db.session.add(create_invoice)
+        db.session.commit()
+
+        session['invoice'] = create_invoice.invoice_id
+
+    app.logger.info("Invoice: " + str(session['invoice']))
+
+    return render_template('invoice.html',
+                           invoice_number=session['invoice'],
                            categories=getCategoryNames(),
                            account_settings=session['account_settings'])
 
