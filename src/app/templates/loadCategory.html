@@ -22,8 +22,8 @@
                         <a href="{{ url_for('loadItem', item_id=item.listing_id) }}">
                             {{ item.listing_name }}
                         </a>
-                        {{ 'Price : £' ~ item.avg_price }}
-                        {{ 'Environmental footprint : ' ~ item.footprint }}
+                        <p>{{ 'Price : £' ~ item.avg_price }}</p>
+                        <p>{{ 'Environmental footprint : ' ~ item.footprint }}</p>
                     </div>
                 {% endfor %}
             </ul>
