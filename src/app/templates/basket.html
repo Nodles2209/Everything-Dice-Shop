@@ -10,30 +10,36 @@
 <body>
     {% block content %}
         <div class="container">
-            {% for item in basket %}
-                <div class="basket_item container">
-                    <img src="{{ url_for('static', filename=item.listing_img) }}"
-                                 class="img-thumbnail img-responsive"
-                                 alt="{{ item.listing_name }}">
-                    <a href="{{ url_for('loadItem', item_id=item.listing_id, option_default=(item.option_id, item.option_name)) }}">
-                        {{ item.listing_name }}
-                    </a>
-                    <p>{{ item.option_name }}</p>
-                    <p>{{ 'Quantity: ' ~ item.quantity }}</p>
-                    <p>{{ 'Price: £' ~ item.option_price * item.quantity}}</p>
+            {% if basket %}
+                {% for item in basket %}
+                    <div class="basket_item container">
+                        <img src="{{ url_for('static', filename=item.listing_img) }}"
+                                     class="img-thumbnail img-responsive"
+                                     alt="{{ item.listing_name }}">
+                        <a href="{{ url_for('loadItem', item_id=item.listing_id, option_default=(item.option_id, item.option_name)) }}">
+                            {{ item.listing_name }}
+                        </a>
+                        <p>{{ item.option_name }}</p>
+                        <p>{{ 'Quantity: ' ~ item.quantity }}</p>
+                        <p>{{ 'Price: £' ~ item.option_price * item.quantity}}</p>
+                    </div>
+                {% endfor %}
+
+                <div class="total_price container">
+                    {{ 'Total price: £' ~ total_price }}
                 </div>
-            {% endfor %}
-        </div>
 
-        <div class="total_price container">
-            {{ 'Total price: £' ~ total_price }}
-        </div>
-
-        <div class="option_form">
-            <form method="post">
-                {{ form.csrf_token }}
-                {{ wtf.quick_form(form) }}
-            </form>
+                <div class="option_form">
+                    <form method="post">
+                        {{ form.csrf_token }}
+                        {{ wtf.quick_form(form) }}
+                    </form>
+                </div>
+            {% else %}
+                <div class="empty_basket container text-center">
+                    <h3>Empty basket</h3>
+                </div>
+            {% endif %}
         </div>
     {% endblock %}
 </body>
