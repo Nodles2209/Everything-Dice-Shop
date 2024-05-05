@@ -26,7 +26,8 @@ def initLookupTables():
         db.session.add(newCategory)
 
     for country in lookup_data["Country list"]:
-        newCountry = CountryList(country_name=country["country_name"])
+        newCountry = CountryList(country_name=country["country_name"],
+                                 area_code=country["area_code"])
         db.session.add(newCountry)
 
     for vendor in lookup_data["Card classification"]:
