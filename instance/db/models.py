@@ -119,6 +119,8 @@ class UserProfile(db.Model, UserMixin):
                              primaryjoin="UserProfile.id == UserBasket.basket_user_id")
     billing = db.relationship("UserBillingInfo", back_populates="user",
                               primaryjoin="UserProfile.id == UserBillingInfo.id")
+    invoices = db.relationship("Invoices", back_populates="user",
+                               primaryjoin="UserProfile.id == Invoices.invoice_user_id")
 
     username = db.Column(db.String, index=True, unique=True)
     password = db.Column(db.String, index=True)
@@ -172,6 +174,9 @@ class CountryList(db.Model):
                               primaryjoin="CountryList.country_id == BillingInfo.country_id")
 
     country_name = db.Column(db.String, index=True)
+    area_code = db.Column(db.Integer, index=True)
+    area_code_num = db.relationship("BillingInfo", back_populates="country_area_code",
+                                    primaryjoin="CountryList.area_code == BillingInfo.phone_area_code")
 
 
 class BillingInfo(db.Model):
@@ -190,7 +195,10 @@ class BillingInfo(db.Model):
                               primaryjoin="BillingInfo.country_id == CountryList.country_id")
 
     state = db.Column(db.String, index=True)
-    phone_area_code = db.Column(db.Integer, index=True)
+    phone_area_code = db.Column(db.Integer, db.ForeignKey("country_list.area_code"))
+    country_area_code = db.relationship("CountryList", back_populates="area_code_num",
+                                        primaryjoin="BillingInfo.phone_area_code == CountryList.area_code")
+
     phone_num = db.Column(db.Integer, index=True)
 
     payment_method = db.Column(db.Integer, db.ForeignKey("payment_method.details_id"))
@@ -272,4 +280,15 @@ class OnlineBanking(PaymentMethod):
 
     merchant_name = db.Column(db.String, index=True)
     username = db.Column(db.String, index=True)
+    email = db.Column(db.String, index=True)
     password = db.Column(db.String, index=True)
+
+
+class Invoices(db.Model):
+    __tablename__ = "invoices"
+
+    invoice_id = db.Column(db.Integer, primary_key=True)
+
+    invoice_user_id = db.Column(db.Integer, db.ForeignKey("user_profile.id"))
+    user = db.relationship("UserProfile", back_populates="invoices",
+                           primaryjoin="Invoices.invoice_user_id == UserProfile.id")
