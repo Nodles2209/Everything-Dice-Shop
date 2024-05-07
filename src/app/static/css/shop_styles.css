@@ -82,7 +82,7 @@ body {
 
 .titlebar, .jumbotron {
      height: 40vh;
-     background-image: url('../img/assets/flames7.gif');
+     background-image: url('../img/assets/flames-banner.gif'), url('../img/assets/flames-static.png');
      background-repeat: no-repeat;
      background-size: cover;
      justify-content: center;
