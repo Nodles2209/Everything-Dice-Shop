@@ -6,42 +6,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ category_name }}</title>
+
+    {% block scripts %}
+    {{super()}}
+        <script src="{{ url_for('static', filename='js/singleItemQueries.js') }}"></script>
+    {% endblock %}
 </head>
 <body>
     {% block content %}
         <div class="container-fluid">
             <div class="listing_name container text-center">
-                <h2>{{ item.listing_name }}</h2>
+                <h2 class="display-2">{{ item.listing_name }}</h2>
             </div>
 
-            <div class="listing_description container">
-                <p>{{ item.listing_description | safe}}</p>
-            </div>
+            <div class="full-listing container-fluid row">
+                <div class="right-gallery col">
+                    <div class="img-gallery row">
+                        <div class="side-img container row">
+                            {% for option in item_options %}
+                                <div class="option_img col">
+                                    <img src="{{ url_for('static', filename=option.option_img) }}"
+                                     class="img-thumbnail img-responsive"
+                                     alt="{{ option.option_name }}">
+                                </div>
+                            {% endfor %}
+                        </div>
 
-            <div class="main_img">
-                <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
-                 class="img-responsive"
-                 alt="{{ item.listing_name }}">
-            </div>
-
-            {% if item.in_stock %}
-                {% for option in item_options %}
-                    <div class="side_img">
-                        <img src="{{ url_for('static', filename=option.option_img) }}"
-                         class="img-thumbnail img-responsive"
-                         alt="{{ option.option_name }}">
+                        <div class="main-img container col">
+                            <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
+                             class="img-thumbnail img-responsive"
+                             alt="{{ item.listing_name }}">
+                        </div>
                     </div>
-                {% endfor %}
-
-                <div class="option_form">
-                    <form method="post">
-                        {{ form.csrf_token }}
-                        {{ wtf.quick_form(form) }}
-                    </form>
                 </div>
-            {% else %}
-                <p>Out of stock</p>
-            {% endif %}
+
+                <div class="left-info container col">
+                    <div class="listing-info container row">
+                        <div class="description-label container">
+                            <h3 class="display-3">Item description:</h3>
+                        </div>
+
+                        <div class="listing_description container col">
+                            {{ item.listing_description | safe}}
+                        </div>
+
+                        <div class="cart-option container row">
+                            {% if item.in_stock %}
+                                <div class="option_form container col">
+                                    <form action="" method="POST" novalidate>
+                                        {{ form.csrf_token }}
+                                        <div class="form-group">
+                                            {{ form.option.label }}
+                                            {{ form.option(class="form-control", id="option") }}
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{ form.quantity.label }}
+                                            {{ form.quantity(class="form-control", id="quantity") }}
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{ form.price.label }}
+                                            {{ form.price(class="form-control", id="price",
+                                             value='£' ~ item_options[0].option_price ~ '0') }}
+                                        </div>
+
+                                        <div class="form-group">
+                                            {{ form.submit(class="form-control") }}
+                                        </div>
+                                    </form>
+                                </div>
+                            {% else %}
+                                <div class="out-of-stock container col">
+                                    Out of stock
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     {% endblock %}
 </body>
