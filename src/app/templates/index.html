@@ -11,21 +11,48 @@
     {% block content %}
         <div class="container">
             {% for portion in sections %}
-                <div class="container text-center">
-                    <h2>{{ portion[0] }}</h2>
-                </div>
-                {% for item in portion[1] %}
-                    <div class="item_listing">
-                        <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
-                             class="img-thumbnail img-responsive"
-                             alt="{{ item.listing_name }}">
-                        <a href="{{ url_for('loadItem', item_id=item.listing_id) }}">
-                            {{ item.listing_name }}
-                        </a>
-                        <p>{{ 'Price : £' ~ item.avg_price }}</p>
-                        <p>{{ 'Environmental footprint : ' ~ item.footprint ~ 'kg emissions'}}</p>
+                {% if portion[0] == "All Items" %}
+                    <div class="container">
+                        <h2 class="display-2">{{ portion[0] }}
+                            <a class="chevron-arrow" href="{{ url_for('loadCategory', category=portion[0]) }}">
+                                <span class="bi bi-chevron-double-right"></span>
+                            </a>
+                        </h2>
                     </div>
-                {% endfor %}
+                {% else %}
+                    <div class="container">
+                        <h2 class="display-2">{{ portion[0] }}</h2>
+                    </div>
+                {% endif %}
+                <div class="portion-wrapper">
+                    <div class="portion container row">
+                        {% for item in portion[1] %}
+                            <div class="item-listing card col">
+                                <div class="item-img card-img-top">
+                                    <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
+                                     class="listing-img img-thumbnail img-responsive"
+                                     alt="{{ item.listing_name }}">
+                                </div>
+
+                                <div class="listing-info card-body">
+                                    <div class="listing_title card-title">
+                                        <a href="{{ url_for('loadItem', item_id=item.listing_id) }}">
+                                            {{ item.listing_name }}
+                                        </a>
+                                    </div>
+
+                                    <div class="listing_price card-text">
+                                        {{ 'Price : £' ~ item.avg_price ~ '0' }}
+                                    </div>
+
+                                    <div class="listing_footprint card-text">
+                                        {{ 'Environmental footprint : ' ~ item.footprint ~ 'kg emissions' }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             {% endfor %}
         </div>
     {% endblock %}
