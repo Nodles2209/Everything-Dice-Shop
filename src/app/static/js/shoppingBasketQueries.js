@@ -10,10 +10,8 @@ $.ajaxSetup({
 axios.defaults.headers.common["X-CSRFToken"] = "{{ csrf_token() }}";
 
 function updateIndividualPrice(optionId, newPrice) {
-    // Select the individual price display using the optionId
     let individualPriceDisplay = document.getElementById(optionId);
 
-    // Update the individual price display
     individualPriceDisplay.textContent = '£' + newPrice.toFixed(2);
 }
 
@@ -23,7 +21,6 @@ function updatePriceOnChange(quantityField) {
     let optionId = itemContainer.querySelector('.hidden-field input').value;
     let newQuantity = parseInt(quantityField.value);
 
-    // Make a request to get the price based on the option ID
     fetch('/get_price/' + optionId)
     .then(response => response.text())
     .then(price => {
@@ -39,7 +36,6 @@ function updatePriceOnChange(quantityField) {
     });
 }
 
-// Listen for changes in quantity fields
 let quantityFields = document.querySelectorAll('.quantity-field');
 quantityFields.forEach(function(quantityField) {
     quantityField.addEventListener('change', function() {
@@ -62,11 +58,8 @@ function updateBasketItem(optionId, quantity) {
         })
     .then(response => {
         if (response.ok) {
-            // Success, update total price and any other UI elements
             updateTotalPrice();
-            // Additional UI updates if needed
         } else {
-            // Handle error
             console.error('Failed to update basket item');
         }
     })
@@ -75,7 +68,6 @@ function updateBasketItem(optionId, quantity) {
     });
 }
 
-    // Function to update total price
 function updateTotalPrice() {
     let totalPrice = 0;
     let priceFields = document.querySelectorAll('.price-field');
@@ -89,7 +81,6 @@ function updateTotalPrice() {
 document.querySelector('.total-price .formatted-total-price').textContent = '£' + totalPrice.toFixed(2);
 }
 
-    // Listen for changes in quantity or price fields
 const itemForms = document.querySelectorAll('.change-item-form');
 for (const element of itemForms) {
     element.addEventListener('change', function(event) {
