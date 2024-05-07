@@ -5,39 +5,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token }}">
     <title>Shopping Basket</title>
+
+    {% block scripts %}
+    {{super()}}
+        <script src="{{ url_for('static', filename='js/shoppingBasketQueries.js') }}"></script>
+    {% endblock %}
 </head>
 <body>
     {% block content %}
-        <div class="container">
+        <div class="shopping-page container-fluid">
             {% if basket %}
-                {% for item in basket %}
-                    <div class="basket_item container">
-                        <img src="{{ url_for('static', filename=item.listing_img) }}"
-                                     class="img-thumbnail img-responsive"
-                                     alt="{{ item.listing_name }}">
-                        <a href="{{ url_for('loadItem', item_id=item.listing_id, option_default=(item.option_id, item.option_name)) }}">
-                            {{ item.listing_name }}
-                        </a>
-                        <p>{{ item.option_name }}</p>
-                        <p>{{ 'Quantity: ' ~ item.quantity }}</p>
-                        <p>{{ 'Price: £' ~ item.option_price * item.quantity}}</p>
+                <div class="basket-page container-fluid row">
+                    <div class="all-basket-items container col">
+                        {% for item in basket %}
+                            <div class="basket-item container border row">
+                                <div class="basket-img container col-3">
+                                    <img src="{{ url_for('static', filename=item.listing_img) }}"
+                                             class="img-thumbnail img-responsive"
+                                             alt="{{ item.listing_name }}">
+                                </div>
+
+                                <div class="basket-item-info container col-9">
+                                    <div class="basket-listing-title container">
+                                        <a href="{{ url_for('loadItem', item_id=item.listing_id, option_default=(item.option_id, item.option_name)) }}">
+                                            {{ item.listing_name }}
+                                        </a>
+                                    </div>
+                                    <div class="change-item-form container col">
+                                        <form action="{{ url_for('deleteItemFromBasket', option_id=item.option_id) }}" method="POST" novalidate>
+                                            {{ item_form.csrf_token }}
+
+                                            <div class="hidden-field">
+                                                <input name="hiddenField" type="hidden" id="hidden-option-id" value="{{ item.option_id }}"/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                {{ item_form.option.label }}
+                                                {{ item_form.option(class="form-control option-name-field",  id="basket-option",
+                                                value=item.option_name) }}
+                                            </div>
+
+                                            <div class="form-group">
+                                                {{ item_form.quantity.label }}
+                                                {{ item_form.quantity(class="form-control quantity-field", id="basket-quantity-" ~ item.option_id,
+                                                value=item.quantity) }}
+                                            </div>
+
+                                            <div class="form-group">
+                                                {{ item_form.price.label }}
+                                                {{ item_form.price(class="form-control price-field", id="basket-price-" ~ item.option_id,
+                                                value='£' ~ item.option_price*item.quantity ~ '0') }}
+                                            </div>
+
+                                            <div class="form-group">
+                                                {{ item_form.delete_item(class="form-control") }}
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
 
-                <div class="total_price container">
-                    {{ 'Total price: £' ~ total_price }}
-                </div>
+                    <div class="to-checkout container border col-4">
+                        <div class="checkout-title container text-center">
+                            <h3 class="display-3">
+                                Checkout Info
+                            </h3>
+                        </div>
 
-                <div class="option_form">
-                    <form method="post">
-                        {{ form.csrf_token }}
-                        {{ wtf.quick_form(form) }}
-                    </form>
+                        <div class="all-prices-display border container">
+                            <div class="prices-display-title container">
+                                <h3 class="display-3">Total price:</h3>
+                            </div>
+
+                            <div class="divide-line-separator">
+                                <hr class="mt-1 mb-1"/>
+                            </div>
+
+                            <div class="individual-prices-display container">
+                                {% for item in basket %}
+                                    <div class="individual-price container">
+                                        {% if item == basket[0] %}
+                                            <h3 class="display-3 formatted-individual-price float-end" id={{ item.option_id }}>{{ '£' ~ item.option_price * item.quantity ~ '0' }}</h3>
+                                        {% else %}
+                                            <h3 class="display-3 formatted-adder">+
+                                                <span class="formatted-individual-price float-end" id={{ item.option_id }}>{{ '£' ~ item.option_price * item.quantity ~ '0' }}</span>
+                                            </h3>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="divide-line-separator">
+                                <hr class="mt-1 mb-1"/>
+                            </div>
+
+                            <div class="total-price container">
+                                <h3 class="display-3">Total:
+                                    <span class="formatted-total-price float-end">{{ '£' ~ total_price ~ '0' }}</span>
+                                </h3>
+                            </div>
+                        </div>
+
+                        <div class="option-form container">
+                            <form action="" method="POST" novalidate>
+                                {{ form.csrf_token }}
+
+                                <div class="form-group">
+                                    {{ form.clear(class="form-control") }}
+                                </div>
+
+                                <div class="form-group">
+                                    {{ form.checkout(class="form-control") }}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             {% else %}
-                <div class="empty_basket container text-center">
-                    <h3>Empty basket</h3>
+                <div class="empty_basket container-fluid text-center">
+                    <h2 class="display-2">Empty basket</h2>
+
+                    <div class="home-url container text-center">
+                        <a href="{{ url_for('homePage') }}">Back to home page</a>
+                    </div>
                 </div>
             {% endif %}
         </div>
