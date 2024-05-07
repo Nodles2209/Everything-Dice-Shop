@@ -9,24 +9,86 @@
 </head>
 <body>
     {% block content %}
-        <div class="container text-center">
-            <h2>{{ category_name }}</h2>
-        </div>
-        <div class="container">
-            <ul>
-                {% for item in category_items %}
-                    <div class="item_listing">
-                        <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
-                             class="img-thumbnail img-responsive"
-                             alt="{{ item.listing_name }}">
-                        <a href="{{ url_for('loadItem', item_id=item.listing_id) }}">
-                            {{ item.listing_name }}
-                        </a>
-                        <p>{{ 'Price : £' ~ item.avg_price }}</p>
-                        <p>{{ 'Environmental footprint : ' ~ item.footprint }}</p>
-                    </div>
-                {% endfor %}
-            </ul>
+        <div class="category container-fluid row">
+            <div class="category-form container col">
+                <div class="sorting_form">
+                    <form action="" method="POST" novalidate>
+                        {{ form.csrf_token }}
+                        {% if category_name == "All Items" %}
+                            <div class="form-group">
+                                {{ form.sort_by.label }}
+                                {{ form.sort_by(class="form-control") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.order_by.label }}
+                                {{ form.order_by(class="form-control") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.category.label }}
+                                {{ form.category(class="form-control") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.show_sold.label }}
+                                {{ form.show_sold(class="form-control") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.submit(class="form-control") }}
+                            </div>
+
+                        {% else %}
+                            <div class="form-group">
+                                {{ form.sort_by.label }}
+                                {{ form.sort_by(class="form-control") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.order_by.label }}
+                                {{ form.order_by(class="form-control") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.show_sold.label }}
+                                {{ form.show_sold(class="form-control") }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.submit(class="form-control") }}
+                            </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+
+            <div class="category-paginate container border col">
+                <div class="category-title container">
+                    <h2 class="display-2">{{ category_name }}</h2>
+                </div>
+
+                <div class="all-items container row">
+                    {% for item in category_items %}
+                        <div class="item-listing card">
+                                <div class="item-img card-img-top">
+                                    <img src="{{ url_for('static', filename=item.thumbnail_img) }}"
+                                     class="listing-img img-thumbnail img-responsive"
+                                     alt="{{ item.listing_name }}">
+                                </div>
+
+                                <div class="listing-info card-body">
+                                    <div class="listing_title card-title">
+                                        <a href="{{ url_for('loadItem', item_id=item.listing_id) }}">
+                                            {{ item.listing_name }}
+                                        </a>
+                                    </div>
+
+                                    <div class="listing_price card-text">
+                                        {{ 'Price : £' ~ item.avg_price ~ '0' }}
+                                    </div>
+
+                                    <div class="listing_footprint card-text">
+                                        {{ 'Environmental footprint : ' ~ item.footprint ~ 'kg emissions' }}
+                                    </div>
+                                </div>
+                            </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     {% endblock %}
 </body>
