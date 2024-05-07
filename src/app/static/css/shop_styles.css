@@ -1,0 +1,304 @@
+@font-face {
+font-family: 'dragonlord';
+src: url('../fonts/dragonlord/DragonlordPersonalUseOnlyRegular-PKxzm.otf') format('opentype');
+}
+
+@font-face {
+font-family: 'cinzel';
+src: url('../fonts/cinzel/Cinzel-Regular.otf') format('opentype');
+     url('../fonts/cinzel/CinzelDecorative-Regular.otf') format('opentype');
+     url('../fonts/cinzel/Cinzel-Black.otf') format('opentype');
+     url('../fonts/cinzel/CinzelDecorative-Black.otf') format('opentype');
+     url('../fonts/cinzel/Cinzel-Bold.otf') format('opentype');
+     url('../fonts/cinzel/CinzelDecorative-Bold.otf') format('opentype');
+}
+
+@font-face {
+font-family: 'dungeon-rpg';
+src: url('../fonts/dungeon-rpg/DUNGRG__.TTF') format('truetype');
+}
+
+* {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+body {
+     overflow-x: hidden;
+     margin: 0;
+     padding: 0;
+}
+
+.container-fluid {
+     justify-content: center;
+}
+
+/* change the background color */
+.navbar-custom {
+    background-color: #520d9b;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #ffcc00;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #ffbb00;
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #6240e5;
+}
+
+/* for dropdowns only */
+.navbar-custom .navbar-nav .dropdown-menu {
+     background-color: #ddaa11;
+     width: 100%;
+}
+
+/* dropdown item text color */
+.navbar-custom .navbar-nav .dropdown-item {
+    color: #000000;
+}
+
+/* dropdown item hover or focus */
+.navbar-custom .navbar-nav .dropdown-item:hover,
+.navbar-custom .navbar-nav .dropdown-item:focus {
+    color: #20154d;
+    background-color: red;
+}
+
+.titlebar {
+     margin:0;
+     padding: 2vh;
+}
+
+.titlebar, .jumbotron {
+     height: 40vh;
+     background-image: url('../img/assets/flames7.gif');
+     background-repeat: no-repeat;
+     background-size: cover;
+     justify-content: center;
+}
+
+.shop-title {
+     color: rgba(245, 155, 20, 0.93);
+}
+
+.display-1 {
+     font-family: 'dragonlord', serif;
+     font-variant: small-caps;
+     font-size: 15vw !important;
+}
+
+.display-2 {
+     font-family: 'cinzel', serif;
+     font-variant: small-caps;
+     font-size: 5vw !important;
+}
+
+.display-3, .home-url {
+     font-family: 'cinzel', serif;
+     font-variant: small-caps;
+     font-size: 2vw !important;
+}
+
+.shop_nav, .dropdown-menu {
+     font-family: 'cinzel', serif;
+     font-variant: small-caps;
+     font-size: 1.5vw !important;
+}
+
+.nav-link {
+     padding: 2.5vh 1vw !important;
+}
+
+.portion {
+     margin: 1vw;
+}
+
+.chevron-arrow {
+     color: #000000;
+}
+
+.item-listing {
+     height: 95%;
+     width: 30%;
+     margin: 0;
+     padding: 2vw 2vw;
+     justify-content: center;
+
+     font-family: 'cinzel', serif;
+}
+
+.listing_title, .listing_name {
+     font-size: 1.5vw !important;
+}
+
+.item-img {
+     max-width: 50vh;
+     height: 40vh;
+}
+
+.listing-img {
+     height: 100%;
+     width: 100%;
+     object-fit: cover;
+}
+
+.listing_price, .listing_footprint {
+     font-size: 1.25vw !important;
+}
+
+a {
+     text-decoration: none;
+}
+
+.listing_description {
+     font-family: 'dungeon-rpg', serif;
+     font-size: 2vw !important;
+}
+
+.main-img {
+     width: 100vw !important;
+     height: 100vh;
+}
+
+.side-img {
+     width: 10vw !important;
+     height: 10vh !important;
+}
+
+.img-gallery {
+     width: 100% !important;
+     height: 100%;
+}
+
+.right-gallery {
+     width: 50%;
+     justify-content: center;
+}
+
+.left-info {
+     width: 40%;
+}
+
+form {
+     font-family: 'cinzel', serif;
+     font-variant: small-caps;
+     font-size: 1.5vw !important;
+}
+
+.form-control {
+     width: 95%;
+
+     font-family: 'cinzel', serif;
+     font-variant: small-caps;
+     font-size: 1.25vw !important;
+}
+
+.category-paginate, .category-form {
+     padding: 1vw;
+}
+
+.category-form {
+     max-width: 20% !important;
+     margin-top: 6vw;
+     margin-right: 1.5vw;
+}
+
+.card {
+     width: 20vw;
+     height: 80vh;
+}
+
+.listing_title {
+     min-height: 15vh;
+     justify-content: center;
+     align-content: center;
+}
+
+.all-basket-items {
+     width: 70% !important;
+     padding: 1vw;
+}
+
+.basket-item {
+     width: 100%;
+}
+
+.basket-img {
+     width: 25%;
+     padding: 1vh 0;
+     justify-content: center;
+}
+
+.basket-item-info {
+     width: 70%;
+     padding: 0.5vw;
+}
+
+.basket-listing-title {
+     width: 90%;
+
+     font-family: 'cinzel', serif;
+     font-variant: small-caps;
+     font-size: 1.75vw !important;
+}
+
+.change-item-form {
+     width: 90%;
+}
+
+.to-checkout {
+     width: 30% !important;
+     padding: 1vw;
+     margin: 1vw;
+     justify-content: center;
+}
+
+.checkout-title > h3 {
+     font-size: 3vw !important;
+}
+
+.all-prices-display {
+     width: 90%;
+}
+
+.prices-display-title, .total-price {
+     padding: 2vh 1vw;
+}
+
+.total-price, .individual-prices-display {
+     width: 90%;
+}
+
+.individual-prices-display {
+     padding-top: 1vw;
+}
+
+.individual-price > .formatted-adder {
+     height: 100%;
+     padding: 0;
+     margin: 0;
+}
+
+.formatted-individual-price {
+     font-size: 1.5vw !important;
+}
+
+.option-form {
+     width: 90%;
+     padding: 5%;
+}
+
+.billing-title, .checkout_form {
+     padding: 1vw;
+}
