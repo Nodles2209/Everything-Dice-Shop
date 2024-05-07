@@ -1,5 +1,7 @@
 import datetime
 import os
+import random
+
 from flask import json
 
 from paths import jsonPath
@@ -40,6 +42,18 @@ def initLookupTables():
             newOption = AccountSettings(setting_option=option,
                                         is_anon=setting["is_anon"])
             db.session.add(newOption)
+
+
+def initInvoices():
+    invoice_start_id = random.randint(100000, 200000)
+    invoice_nums = random.randint(0, 200)
+
+    new_invoice = Invoices(invoice_id=invoice_start_id)
+    db.session.add(new_invoice)
+
+    for i in range(invoice_nums):
+        new_invoice = Invoices()
+        db.session.add(new_invoice)
 
 
 def initOptions(item, table_for, newListing):
@@ -140,6 +154,7 @@ def initAppDB():
     with app.app_context():
         initLookupTables()
         initListings()
+        initInvoices()
         db.session.commit()
         db.session.close()
 
