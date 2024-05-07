@@ -6,32 +6,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Checkout</title>
+
+    {% block scripts %}
+    {{super()}}
+        <script src="{{ url_for('static', filename='js/checkOutQueries.js') }}"></script>
+    {% endblock %}
 </head>
 <body>
     {% block content %}
-        <div class="final_basket container">
-            {% for item in final_basket %}
-                <div class="basket_item container">
-                    <img src="{{ url_for('static', filename=item.listing_img) }}"
-                                 class="img-thumbnail img-responsive"
-                                 alt="{{ item.listing_name }}">
-                    <p>{{ item.listing_name }}</p>
-                    <p>{{ item.option_name }}</p>
-                    <p>{{ 'Quantity: ' ~ item.quantity }}</p>
-                    <p>{{ 'Price: £' ~ item.option_price * item.quantity}}</p>
-                </div>
-            {% endfor %}
-
-            <div class="total_price container">
-                {{ 'Total price: £' ~ total_price }}
+        <div class="container-fluid">
+            <div class="billing-title border container text-center">
+                <h3 class="display-2">Add Billing Info</h3>
             </div>
-        </div>
 
-        <div class="checkout_form">
-            <form method="post">
-                {{ form.csrf_token }}
-                {{ wtf.quick_form(form) }}
-            </form>
+            <div class="checkout_form border container">
+                <form action="" method="POST" onsubmit="return validateForm()">
+                    {{ form.csrf_token }}
+
+                    <div class="form-group">
+                        {{ form.address1.label }}
+                        {{ form.address1(class="form-control") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.address2.label }}
+                        {{ form.address2(class="form-control") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.address3.label }}
+                        {{ form.address3(class="form-control") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.city.label }}
+                        {{ form.city(class="form-control") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.postcode.label }}
+                        {{ form.postcode(class="form-control") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.country.label }}
+                        {{ form.country(class="form-control") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.state.label }}
+                        {{ form.state(class="form-control") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.phone_area_code.label }}
+                        {{ form.phone_area_code(class="form-control") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.phone_number.label }}
+                        {{ form.phone_number(class="form-control", id="phone-number") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.payment_type.label }}
+                        {{ form.payment_type(class="form-control", id="payment-type-select", onchange="togglePaymentForm()") }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.payment_method.label }}
+                        {{ form.payment_method(class="form-control") }}
+                    </div>
+
+                    <div id="card-form-group" class="card_form form-group" style="display: none;">
+                        {{ form.card_form.label }}
+                        <div class="form-group">
+                            {{ form.card_form.card_holder.label }}
+                            {{ form.card_form.card_holder(class="form-control") }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.card_form.card_num.label }}
+                            {{ form.card_form.card_num(class="form-control", id="card-number") }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.card_form.expiry_date.label }}
+                            {{ form.card_form.expiry_date(class="form-control") }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.card_form.cvc.label }}
+                            {{ form.card_form.cvc(class="form-control") }}
+                        </div>
+                    </div>
+
+                    <div id="online-form-group" class="online_form form-group" style="display: none;">
+                        {{ form.online_form.label }}
+                        <div class="form-group">
+                            {{ form.online_form.name_or_email.label }}
+                            {{ form.online_form.name_or_email(class="form-control") }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.online_form.password.label }}
+                            {{ form.online_form.password(class="form-control") }}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.submit(class="form-control") }}
+                    </div>
+                </form>
+            </div>
         </div>
     {% endblock %}
 </body>
