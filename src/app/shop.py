@@ -305,6 +305,10 @@ def invoice():
     if 'invoice' not in session:
         if not session['isAnon']:
             create_invoice = Invoices(session['user_id'])
+
+            # edit the number of items in listing_stock
+            # add the final basket to the session and then clear the final basket once the user exits the page
+
             clearBasketDB(session['user_id'])
         else:
             create_invoice = Invoices()
