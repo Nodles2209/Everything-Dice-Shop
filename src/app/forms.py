@@ -5,10 +5,19 @@ from wtforms.form import Form
 
 
 class OptionsForm(FlaskForm):
-    option = wtforms.SelectField('Select option', validators=[wtforms.validators.DataRequired()])
+    option = wtforms.SelectField('Select option', validators=[wtforms.validators.DataRequired()], coerce=int)
     quantity = wtforms.IntegerField('Quantity', default=1, widget=wtforms.widgets.NumberInput(min=1),
                                     validators=[wtforms.validators.InputRequired()])
+    price = wtforms.StringField('Price', render_kw={'readonly': True})
     submit = wtforms.SubmitField('Add to basket')
+
+
+class BasketItemForm(FlaskForm):
+    option = wtforms.StringField('Option selected', render_kw={'readonly': True})
+    quantity = wtforms.IntegerField('Quantity', default=1, widget=wtforms.widgets.NumberInput(min=1),
+                                    validators=[wtforms.validators.InputRequired()])
+    price = wtforms.StringField('Price', render_kw={'readonly': True})
+    delete_item = wtforms.SubmitField('Delete item')
 
 
 class ShoppingBasketForm(FlaskForm):
@@ -42,8 +51,12 @@ class CheckoutForm(FlaskForm):
     state = wtforms.StringField('State')
     phone_area_code = wtforms.SelectField('Phone area code', coerce=int)
     phone_number = wtforms.IntegerField('Phone number', validators=[wtforms.validators.DataRequired()])
-    payment_type = wtforms.RadioField('Payment type', choices=[('card', 'Card'), ('online', 'Paypal')],
-                                      default=('card', 'Card'), validators=[wtforms.validators.DataRequired()])
+    payment_type = wtforms.SelectField('Payment type',
+                                       choices=[('none', 'Please select a payment option'),
+                                                ('card', 'Card'),
+                                                ('online', 'Paypal')],
+                                       default=('none', 'Please select a payment option'),
+                                       validators=[wtforms.validators.InputRequired()])
     payment_method = wtforms.SelectField('Payment method')  # add
     # choices from database query
     # (a concat string containing last 4 digits of the card num) or a choice which adds new payment methods via js
@@ -55,19 +68,34 @@ class CheckoutForm(FlaskForm):
 
 
 class SortForm(FlaskForm):
-    sort_by = wtforms.SelectField('Sort by', choices=[('price', 'Price'),
-                                                      ('name', 'Name'),
-                                                      ('avg_rating', 'Average Ratings'),
+    sort_by = wtforms.SelectField('Sort by', choices=[('avg_price', 'Price'),
+                                                      ('listing_name', 'Name'),
                                                       ('footprint', 'Environmental Footprint'),
                                                       ('sold', 'Sold'),
                                                       ('date_added', 'Date Added')],
                                   default=('name', 'Name'))
-    order_by = wtforms.RadioField('Order', choices=[('asc', 'Ascending'), ('desc', 'Descending')], default='asc')
-    category = wtforms.RadioField('Category', choices=[('all', 'All categories'),
-                                                       ('resin_dice', 'Resin dice'),
-                                                       ('metal_dice', 'Metal dice'),
-                                                       ('dice_making_materials', 'Dice making materials'),
-                                                       ('dice_accessories', 'Dice accessories')],
-                                  default=('all', 'All categories'))
-    show_sold = wtforms.BooleanField('Show sold out items')
+    order_by = wtforms.SelectField('Order', choices=[('asc', 'Ascending'), ('desc', 'Descending')],
+                                   default=('asc', 'Ascending'))
+    category = wtforms.SelectField('Category', choices=[('all', 'All categories'),
+                                                        ('Resin dice', 'Resin dice'),
+                                                        ('Metal dice', 'Metal dice'),
+                                                        ('Dice making materials', 'Dice making materials'),
+                                                        ('Dice accessories', 'Dice accessories')],
+                                   default=('all', 'All categories'))
+    show_sold = wtforms.SelectField('Show sold out items', choices=[(0, 'Yes'), (1, 'No')],
+                                    default=(1, 'No'))
+    submit = wtforms.SubmitField('Sort')
+
+
+class CategorySortForm(FlaskForm):
+    sort_by = wtforms.SelectField('Sort by', choices=[('avg_price', 'Price'),
+                                                      ('listing_name', 'Name'),
+                                                      ('footprint', 'Environmental Footprint'),
+                                                      ('sold', 'Sold'),
+                                                      ('date_added', 'Date Added')],
+                                  default=('name', 'Name'))
+    order_by = wtforms.SelectField('Order', choices=[('asc', 'Ascending'), ('desc', 'Descending')],
+                                   default=('asc', 'Ascending'))
+    show_sold = wtforms.SelectField('Show sold out items', choices=[(0, 'Yes'), (1, 'No')],
+                                    default=(1, 'No'))
     submit = wtforms.SubmitField('Sort')
