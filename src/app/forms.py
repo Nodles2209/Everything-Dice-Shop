@@ -48,7 +48,7 @@ class CheckoutForm(FlaskForm):
     postcode = wtforms.StringField('Postcode')
     country = wtforms.SelectField('Country', coerce=int)  # add choices from
     # database query
-    state = wtforms.StringField('State')
+    state = wtforms.StringField('State', validators=[wtforms.validators.DataRequired()])
     phone_area_code = wtforms.SelectField('Phone area code', coerce=int)
     phone_number = wtforms.IntegerField('Phone number', validators=[wtforms.validators.DataRequired()])
     payment_type = wtforms.SelectField('Payment type',
