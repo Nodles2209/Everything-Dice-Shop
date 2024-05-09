@@ -303,6 +303,17 @@ form {
      padding: 1vw;
 }
 
+.invoice-page>* {
+    width: 50%;
+    justify-content: center;
+}
+
+.invoice-option-info {
+     font-family: 'cinzel', serif;
+     font-variant: small-caps;
+     font-size: 1.25vw !important;
+}
+
 /* https://codepen.io/bright-digital/pen/KzgPry for arrow bounce */
 /* right bounce */
 @-webkit-keyframes bounceRight {
