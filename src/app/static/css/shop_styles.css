@@ -176,6 +176,10 @@ a {
      height: 10vh !important;
 }
 
+.option-img {
+    cursor: pointer;
+}
+
 .img-gallery {
      width: 100% !important;
      height: 100%;
