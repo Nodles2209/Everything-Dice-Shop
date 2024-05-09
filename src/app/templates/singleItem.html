@@ -24,9 +24,10 @@
                     <div class="img-gallery row">
                         <div class="side-img container row">
                             {% for option in item_options %}
-                                <div class="option_img col">
+                                <div class="option-img row">
                                     <img src="{{ url_for('static', filename=option.option_img) }}"
                                      class="img-thumbnail img-responsive"
+                                     id="{{ option.option_id }}"
                                      alt="{{ option.option_name }}">
                                 </div>
                             {% endfor %}

@@ -29,3 +29,15 @@ function updatePrice() {
     };
     xhr.send();
 }
+
+
+document.querySelectorAll('.option-img img').forEach(function(optionImg) {
+    optionImg.addEventListener('click', function() {
+
+        const newImgSrc = optionImg.getAttribute('src');
+
+
+        document.querySelector('.main-img img').setAttribute('src', newImgSrc);
+    });
+});
+
