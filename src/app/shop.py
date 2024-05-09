@@ -309,10 +309,6 @@ def invoice():
     if 'invoice' not in session:
         if not session['isAnon']:
             create_invoice = Invoices(session['user_id'])
-
-            # edit the number of items in listing_stock
-            # potentially add carousel for image gallery for single items
-
             clearBasketDB(session['user_id'])
         else:
             create_invoice = Invoices()
