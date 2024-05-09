@@ -34,11 +34,12 @@
                                         </a>
                                     </div>
                                     <div class="change-item-form container col">
-                                        <form action="{{ url_for('deleteItemFromBasket', option_id=item.option_id) }}" method="POST" novalidate>
+                                        <form action="{{ url_for('deleteItemFromBasket', basket_item_num=item.basket_item_num) }}" method="POST" novalidate>
                                             {{ item_form.csrf_token }}
 
                                             <div class="hidden-field">
-                                                <input name="hiddenField" type="hidden" id="hidden-option-id" value="{{ item.option_id }}"/>
+                                                <input name="hidden-basket-id" type="hidden" id="hidden-basket-id" value="{{ item.basket_item_num }}" />
+                                                <input name="hidden-option-id" type="hidden" id="hidden-option-id" value="{{ item.option_id }}"/>
                                             </div>
 
                                             <div class="form-group">
@@ -89,10 +90,10 @@
                                 {% for item in basket %}
                                     <div class="individual-price container">
                                         {% if item == basket[0] %}
-                                            <h3 class="display-3 formatted-individual-price float-end" id={{ item.option_id }}>{{ '£' ~ item.option_price * item.quantity ~ '0' }}</h3>
+                                            <h3 class="display-3 formatted-individual-price float-end" id={{ item.basket_item_num }}>{{ '£' ~ item.option_price * item.quantity ~ '0' }}</h3>
                                         {% else %}
                                             <h3 class="display-3 formatted-adder">+
-                                                <span class="formatted-individual-price float-end" id={{ item.option_id }}>{{ '£' ~ item.option_price * item.quantity ~ '0' }}</span>
+                                                <span class="formatted-individual-price float-end" id={{ item.basket_item_num }}>{{ '£' ~ item.option_price * item.quantity ~ '0' }}</span>
                                             </h3>
                                         {% endif %}
                                     </div>
