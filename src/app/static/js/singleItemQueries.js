@@ -31,13 +31,25 @@ function updatePrice() {
 }
 
 
+
+function updateMainImage(newImgSrc) {
+    document.querySelector('.main-img img').setAttribute('src', newImgSrc);
+}
+
+
 document.querySelectorAll('.option-img img').forEach(function(optionImg) {
     optionImg.addEventListener('click', function() {
-
         const newImgSrc = optionImg.getAttribute('src');
-
-
-        document.querySelector('.main-img img').setAttribute('src', newImgSrc);
+        updateMainImage(newImgSrc);
     });
 });
+
+
+document.getElementById('option').addEventListener('change', function() {
+    const selectedOptionId = this.value;
+    const selectedOptionImg = document.getElementById(selectedOptionId);
+    const newImgSrc = selectedOptionImg.getAttribute('src');
+    updateMainImage(newImgSrc);
+});
+
 
