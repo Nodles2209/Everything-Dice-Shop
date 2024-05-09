@@ -12,9 +12,6 @@ dbCheck()
 
 
 def checkSessionDefaults():
-    if 'invoice' in session:
-        session.pop('invoice')
-
     if 'isAnon' not in session or 'user_id' not in session:
         app.logger.info("Currently in an anonymous session...")
         session['isAnon'] = True
@@ -22,6 +19,7 @@ def checkSessionDefaults():
     if 'basket' not in session:
         app.logger.info("Creating session basket...")
         session['basket'] = []
+        session['basket_item_num'] = 1
 
     if not session['isAnon'] and 'user_id' in session:
         basket_exists = UserBasket.query \
@@ -111,6 +109,12 @@ def loadCategory(category):
                                account_settings=session['account_settings'])
 
 
+def getFreeBasketID():
+    free_basket_item_num = session['basket_item_num']
+    session['basket_item_num'] += 1
+    return free_basket_item_num
+
+
 @app.route('/<int:item_id>', methods=['GET', 'POST'])
 def loadItem(item_id, option_default=None):
     listing = ItemListing.query \
@@ -145,7 +149,8 @@ def loadItem(item_id, option_default=None):
                               form.option.data,
                               form.quantity.data)
 
-        session['basket'] += [{'option_id': form.option.data,
+        session['basket'] += [{'basket_item_num': getFreeBasketID(),
+                               'option_id': form.option.data,
                                'quantity': form.quantity.data}]
 
         return redirect(url_for('basket'))
@@ -164,10 +169,11 @@ def getBasketDisplay(isAnon, basketItems):
 
     for item in basketItems:
         if isAnon:
-
+            basket_item_num = item['basket_item_num']
             option_id = item['option_id']
             quantity = item['quantity']
         else:
+            basket_item_num = item.basket_item_num
             option_id = item.option_id
             quantity = item.quantity
 
@@ -185,7 +191,8 @@ def getBasketDisplay(isAnon, basketItems):
             .with_entities(ListingOptions.option_name,
                            ListingOptions.option_price).first()
 
-        basket_display += [{'listing_id': option_listing_id[0],
+        basket_display += [{'basket_item_num': basket_item_num,
+                            'listing_id': option_listing_id[0],
                             'listing_name': listing_info.listing_name,
                             'listing_img': listing_info.thumbnail_img,
                             'option_id': option_id,
@@ -200,13 +207,13 @@ def getBasketDisplay(isAnon, basketItems):
 @csrf.exempt
 def updateItemInBasket(option_id):
     quantity = request.form.get('quantity')
-    quantity = int(quantity)
+    basket_item_num = request.form.get('basket_item_num')
 
     if not session['isAnon']:
         updateItemQuantity(session['user_id'], option_id, quantity)
     else:
         for index, item in enumerate(session['basket']):
-            if item['option_id'] == option_id:
+            if item['option_id'] == option_id and item['basket_item_num'] == basket_item_num:
                 item['quantity'] = quantity
                 session.modified = True
 
@@ -215,18 +222,23 @@ def updateItemInBasket(option_id):
     return 'ok'
 
 
-@app.route('/basket/delete/<int:option_id>', methods=['GET', 'POST'])
-def deleteItemFromBasket(option_id):
+@app.route('/basket/delete/<int:basket_item_num>', methods=['GET', 'POST'])
+def deleteItemFromBasket(basket_item_num):
     if not session['isAnon']:
-        deleteItemFromBasketDB(session['user_id'], option_id)
+        deleteItemFromBasketDB(session['user_id'], basket_item_num)
     else:
-        session['basket'] = [item for item in session['basket'] if item['option_id'] != option_id]
+        session['basket'] = [item for item in session['basket'] if item['basket_item_num'] != basket_item_num]
 
     return redirect(url_for('basket'))
 
 
 @app.route('/basket', methods=['GET', 'POST'])
 def basket():
+
+    if 'invoice' in session or 'invoice_items' in session:
+        session.pop('invoice')
+        session.pop('invoice_items')
+
     print(session['basket'])
     if session['isAnon']:
         basket_display = getBasketDisplay(session['isAnon'], session['basket'])
@@ -243,6 +255,7 @@ def basket():
 
     if form.clear.data:
         session['basket'] = []
+        session['basket_item_num'] = 0
 
         if not session['isAnon']:
             clearBasketDB(session['user_id'])
@@ -263,13 +276,6 @@ def basket():
 
 @app.route('/checkout/', methods=['GET', 'POST'])
 def checkOut():
-    if not session['isAnon']:
-        session['basket'] = getBasketDB(session['user_id'])
-    final_basket = getBasketDisplay(session['isAnon'], session['basket'])
-
-    total_price = sum([(item['option_price'] * item['quantity']) for item in final_basket])
-    app.logger.info("Final basket: " + str(final_basket))
-
     country_choices = CountryList.query.all()
     country_names = [(country.country_id, country.country_name) for country in country_choices]
 
@@ -293,8 +299,6 @@ def checkOut():
         return redirect(url_for('invoice'))
 
     return render_template('checkout.html',
-                           final_basket=final_basket,
-                           total_price=total_price,
                            form=checkout_form,
                            categories=getCategoryNames(),
                            account_settings=session['account_settings'])
@@ -307,21 +311,31 @@ def invoice():
             create_invoice = Invoices(session['user_id'])
 
             # edit the number of items in listing_stock
-            # add the final basket to the session and then clear the final basket once the user exits the page
+            # potentially add carousel for image gallery for single items
 
             clearBasketDB(session['user_id'])
         else:
             create_invoice = Invoices()
-            session['basket'] = []
+
         db.session.add(create_invoice)
         db.session.commit()
-
         session['invoice'] = create_invoice.invoice_id
 
+        session['invoice_items'] = session['basket']
+
+    invoice_items = getBasketDisplay(session['isAnon'], session['invoice_items'])
+    total_price = sum([(item['option_price'] * item['quantity']) for item in invoice_items])
+
+    session['basket'] = []
+    session['basket_item_num'] = 0
+
     app.logger.info("Invoice: " + str(session['invoice']))
+    app.logger.info("Invoice items: " + str(invoice_items))
 
     return render_template('invoice.html',
                            invoice_number=session['invoice'],
+                           basket=invoice_items,
+                           total_price=total_price,
                            categories=getCategoryNames(),
                            account_settings=session['account_settings'])
 
