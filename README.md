@@ -18,14 +18,6 @@ Everything Dice Shop is a simulation of an e-commerce platform for purchasing di
 
 ---
 
-## Technologies Used
-- [ ] Frontend: HTML, CSS, JavaScript
-- [ ] Backend: Python with Flask
-- [ ] Database: SQLite
-- [ ] APIs: Placeholder Payment API
-
----
-
 ## Getting Started
 Clone the Repository:
 
